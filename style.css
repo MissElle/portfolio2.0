@@ -1,0 +1,511 @@
+/*style.css stylings for portfolio 2.0*/
+/*============================================*/
+/*stylings for * and max-width for wrapper*/
+
+* {box-sizing: border-box; margin: 0; padding: 0;}
+
+#wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 65em;
+	margin: 0 auto;
+}
+
+html, #wrapper {
+		overflow-x: hidden;
+}
+
+/*============================================*/
+/*Stylings for the image container*/
+
+#dark-box {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 101;
+	display: none;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#image-box {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: .7em;
+	width: 90%;
+	height: 95%;
+	overflow: hidden;
+}
+
+#image-side {
+	float: left;
+	padding: .5em;
+}
+
+#changeout-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	pointer-events: none;
+}
+
+#description-side {
+	background-color: rgba(255, 255, 255, 1);
+	float: left;
+	padding: .5em;
+}
+
+#changeout-text {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#cross {
+	position: absolute;
+	width: 2em;
+	top: 1vh;
+	left: 4vw;
+	cursor: pointer;
+	display: table-cell;
+}
+
+/*============================================*/
+/*These are classes for #dark-box's fade-ins and fade-outs*/
+
+.fade-in {
+	display: block;
+	opacity: 1;
+	animation: .3s linear 1 fadeIn;
+}
+
+.fade-out {
+	display: none;
+	opacity: 0;
+	animation: .3s linear 1 fadeOut;
+	pointer-events: none;
+}
+
+@keyframes fadeIn {
+	0% {display: none; opacity: 0;}
+	100% {display: block; opacity: 1;}
+}
+
+@keyframes fadeOut {
+	0% {display: block; opacity: 1;}
+	100% {display: none; opacity: 0;}
+}
+
+/*============================================*/
+/*Stylings for header name and navbar*/
+
+header{
+	width: 100%;
+	height: 3em;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 1.2em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 .2em;
+	transition: width 1s linear;
+	z-index: 100;
+}
+
+#main {margin-top: 4em;}
+
+@keyframes headerScrollDown {
+	0%{top: -3em;}
+	100%{top: 0;}
+}
+
+.sticky-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 1s ease-in-out;
+	animation: .4s linear 1 headerScrollDown;
+}
+
+.static-header {
+	position: absolute;
+	transition: all 1s ease-in-out;
+}
+
+nav {
+	width: 70%;
+	max-width: 22em;
+	min-width: 15.6em;
+}
+
+nav ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	list-style: none;
+}
+
+nav>ul li {transition: all .1s ease-in-out;}
+
+nav>ul li:hover {
+	transform: scale(1.2) translate(-.3em, 0);
+	text-shadow: .05em .05em .05em #000000;
+}
+
+nav>ul li:active {
+	transform: scale(1.3) translate(-.3em, 0);
+}
+
+nav>ul a:active {
+	color: aqua;
+}
+
+#hamburger{
+	display: none; 
+	padding: .2em;
+	cursor: pointer;
+}
+
+#hamburger img {display: block; width:1.5em; height: 1.5em;}
+
+@media all and (max-width: 35.7em) {
+	header div {width: 0; overflow: visible;}
+	header>div p {width: 90vw;} /*This is to keep the name visible, but the div element at 0. Prevents overlap issues in the styling.*/
+	
+	nav ul {
+		display: none;
+		position: fixed;
+		top: 1em;
+		right: 2em;
+		font-size: 1.1em;
+	}
+	
+	nav>ul li:hover {
+		transform: scale(1.2) translate(.3em, -.2em);
+		text-shadow: -.05em -.05em .05em #000000;
+	}
+	
+	nav>ul li:active {
+		transform: scale(1.3) translate(.3em, -.2em);
+	}
+	
+	nav>ul li, nav:hover>ul li {position: absolute; width: 4em;}
+	nav>ul li:first-child {top: 0; right: 2.1em;}
+	nav>ul li:nth-child(2) {top: 2.4em; right: 2.7em;}
+	nav>ul li:nth-child(3) {top: 4.8em; right: 2.3em;}
+	nav>ul li:nth-child(4) {top: 7.2em; right: 0em;}
+	
+	nav {
+		position: relative;
+	  height: 2em;
+		width: 2em;
+		min-width: 2em;
+		border-radius: 50em;
+		background-color: #919191;
+		overflow: visible;
+	}
+
+	@keyframes menuGrow {
+		0% {
+			width: 2em;
+			height: 2em;
+			top: .15em;
+			right: .15em;
+		}
+		83%{
+			width: 19em;
+			height: 19em;
+			top: 4em;
+			right: -5em;
+		}
+		100% {
+			width: 15em; 
+			height: 15em;
+			top: 4em;
+			right: -5em;
+		}
+	}	
+	
+	nav:hover {
+		animation: .2s ease-out 0s 1 normal none running menuGrow;
+		width: 15em;
+		height: 15em;
+		top: 4em;
+		right: -5em;
+	}
+	
+	nav:hover #hamburger {display: none;}
+	nav:hover ul {display: block;}
+	
+	#hamburger{display: block;}
+}
+
+/*============================================*/
+/*stylings for text and headings*/
+
+li a {
+	text-decoration: none;
+	color: white;
+}
+
+article:first-child {
+	padding: .5em 0 0 0;
+}
+
+article p, figure {
+	padding: 0 .5em .5em .5em;
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child {
+	margin-bottom: 1em;
+}
+
+p, figcaption {line-height: 1.1em; text-align: justify;}
+
+p {
+	white-space: pre-line;
+	font-size: 1.2em;
+}
+
+.flex-headings {
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: flex-start;
+}
+
+/*============================================*/
+/*stylings for images and what holds them*/
+
+.flex-images {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+figure {
+	display: block;
+	background-color: #ffffff;
+	width: 33.33%;
+	height: 15em;
+	overflow: hidden;
+	padding: 0;
+	margin: auto;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.preview-link {
+	width: 100%;
+	height: 15em;
+	object-fit: cover;
+	object-position: center;
+}
+
+figure img {
+	transition: opacity .3s ease-out;
+}
+
+figure:hover img {
+	opacity: .3;
+}
+
+figcaption {
+	display: table-cell;
+	position: relative;
+	top: 0;
+	width: auto;
+	max-width: 33em;
+	padding: 1em;
+	text-align: justify;
+	font-weight: bold;
+	transition: top .21s ease-out;
+	z-index: 10;
+	pointer-events: none;	
+}
+
+figcaption.not-mobile {
+	height: 15em;
+	vertical-align: bottom;
+}
+
+figcaption.mobile {
+	vertical-align: top;
+	background-color: #d8d8d8;
+	height: 6em;
+}
+
+figure:hover figcaption.not-mobile {
+	top: -15em;
+}
+
+@media all and (max-width: 59em){
+	figure {width: 50%;}
+}
+
+@media all and (max-width: 41.8em) {
+	figure {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.portrait {
+	float: right;
+	padding: 1em;
+}
+
+@media all and (max-width: 35.7em) {
+	.portrait {
+		float: none;
+		width: 100%;
+	}
+}
+
+/*============================================*/
+/*stylings for footer tag excluding form*/
+
+
+footer {
+	width: 100%;
+	background-color: #4f4f4f;
+	color: #ffffff;
+	overflow: auto;
+	padding: .7em .7em 0 .7em;
+}
+
+footer form {
+	width: 90%;
+	padding: 0 .5em .5em .5em;
+}
+
+.footer-section {
+	width: 40%;
+	float: left;
+}
+
+.footer-section:first-child {
+	width: 60%;
+}
+
+.footer-section:last-child {width: 100%; clear: both;}
+
+.little-bio {
+	display: flex;
+	min-height: 55%;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#social-footer>ul li {
+	font-size: 2em;
+	padding: .3em;
+	display: block;
+	transition: all .1s ease-in-out;
+}
+
+#social-footer>ul li:hover {
+	transform: scale(1.3) translate(-.2em, 0);
+}
+
+#social-footer>ul li:active {
+	transform: scale(1.5) translate(-.2em, 0);
+	color: aqua;
+}
+
+#social-footer>ul a:active {color: aqua;}
+
+#social-footer ul {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	list-style: none;
+}
+
+#footer-bio {
+	max-width:80%;
+	text-align: center;
+}
+
+@media all and (max-width: 59em){
+	.little-bio {
+	  flex-flow: column-reverse nowrap;
+		justify-content: center;
+		align-content: center;
+	}
+	
+	#social-footer ul {
+		flex-flow: row nowrap;
+		margin-bottom: 1em;
+	}
+	
+	#social-footer>ul li {padding: 0 .3em;}
+	
+	#social-footer>ul li:hover {
+		transform: scale(1.3) translate(0, -.3em);
+	}
+	
+	#social-footer>ul li:active {
+		transform: scale(1.5) translate(0, -.3em);
+	}	
+}
+
+@media all and (max-width: 47.45em) {
+	.footer-section, .footer-section:first-child {
+		width: 100%;
+	}
+	
+	.footer-section>form {
+		margin: auto;
+	}
+	
+	.little-bio {
+		min-height: auto;
+		height: auto;
+	}
+
+}
+
+/*============================================*/
+/*stylings for the footer's form*/
+
+input {
+	display: block;
+	width: 85%;
+	float: right;
+}
+
+input:first-of-type {border-radius: .3em .3em 0 0;}
+input:last-of-type {border-radius: 0 0.3em .3em;}
+
+label {width: 15%; float: left;}
+
+textarea {
+	width: 100%; max-width: 100%; 
+	height: 20em; max-height: 20em;
+	border-radius: .3em;
+	resize: none;
+}
+
+button {
+	float: right; 
+	margin-top: 1em;
+	padding: .2em;
+	border-radius: .2em;
+}
+
+@media all and (max-width: 24.5em) {
+	input {width: 80%;}
+}
+
+@media all and (max-width: 19.7em) {
+	input {width: 75%;}
+}
