@@ -1,7 +1,8 @@
-<svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<svg id="hamburger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 	
 	<defs>
 		<style>
+			#top, #middle, #bottom {fill: #ffffff;}
 			.transparent{fill: transparent;}
 		</style>
 	</defs>
