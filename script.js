@@ -65,12 +65,12 @@ function menuFunctions(){
 	
 	if(clickEvent === false){
 		navMenu.className = 'menuShow';
-		navUl.className = 'ulShow';
+		navUl.className = 'ulShow fade-in';
 		
 		clickEvent = true;
 	} else if (clickEvent === true){
 		navMenu.className='';
-		navUl.className = 'ulHide';
+		navUl.className = 'fade-out';
 		
 		clickEvent = false;
 	}
