@@ -46,10 +46,9 @@ figures[i].addEventListener('click', openImageBox);
 
 function stickyHeader() {
 	var header =document.getElementById('header');
-	var distance = document.body.scrollTop;
-	var firefoxDistance = document.documentElement.scrollTop;
+	var distance = window.pageYOffset;
 	
-	if((distance || firefoxDistance) <= previousScroll && (distance || firefoxDistance) >= 1) {
+	if(distance <= previousScroll && distance >= 1) {
 		header.className = 'sticky-header';
 	}else{
 		header.className = 'static-header';
@@ -87,12 +86,12 @@ function resetClickEvent() {
 	var navMenu = document.getElementById('navMenu');
 	var navUl = document.getElementById('navUl');
 
-	if (document.body.outerWidth > 571.2){
+	if (window.outerWidth > 571.2){
 		navMenu.className = 'menuShow';
 		navUl.className = 'ulShow';
 		
 		clickEvent = false;	
-	} else if (document.body.outerWidth <= 571.2){
+	} else if (window.outerWidth <= 571.2){
 		navMenu.className='';
 		navUl.className ='';
 	}
@@ -123,8 +122,8 @@ function isMobile() {
 //This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
 
 function detectAspectRatio() {
-	var docWidth = document.body.outerWidth;
-	var docHeight = document.body.outerHeight;
+	var docWidth = window.outerWidth;
+	var docHeight = window.outerHeight;
 	
 	var imgWidth = document.getElementById('changeout-image').naturalWidth;
 	var imgHeight = document.getElementById('changeout-image').naturalHeight;
