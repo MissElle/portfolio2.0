@@ -109,7 +109,7 @@ header{
 	height: 3.5em;
 	background-image: url(images/ink-banner.svg);
 	background-size: cover;
-	background-position: -6em top;
+	background-position: -6em -.05em;
 	background-repeat: repeat-x;
 	color: #ffffff;
 	font-size: 1.2em;
@@ -221,7 +221,7 @@ nav>ul a:active {
 		height: 2em;
 		width: 2em;
 		min-width: 2em;
-		background-color: #919191;
+		background-image: url(images/droplet-test3.svg);
 		overflow: visible;
 	}
 	
