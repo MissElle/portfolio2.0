@@ -47,12 +47,16 @@ figures[i].addEventListener('click', openImageBox);
 function stickyHeader() {
 	var header =document.getElementById('header');
 	var distance = document.body.scrollTop;
+	var firefoxDistance = document.documentElement.scrollTop;
 	
-	if(distance <= previousScroll && distance >= 1) {
+	if((distance || firefoxDistance) <= previousScroll && (distance || firefoxDistance) >= 1) {
 		header.className = 'sticky-header';
 	}else{
 		header.className = 'static-header';
 	}
+	
+	console.log(distance + ' ' + previousScroll);
+	
 	previousScroll=window.pageYOffset; //This will be used to see if the user "scrolls up" by comparing it to the previous scroll number
 }
 
@@ -83,15 +87,14 @@ function resetClickEvent() {
 	var navMenu = document.getElementById('navMenu');
 	var navUl = document.getElementById('navUl');
 
-	if (document.body.clientWidth > 571.2){
+	if (document.body.outerWidth > 571.2){
 		navMenu.className = 'menuShow';
 		navUl.className = 'ulShow';
 		
 		clickEvent = false;	
-	} else if (document.body.clientWidth <= 571.2){
+	} else if (document.body.outerWidth <= 571.2){
 		navMenu.className='';
 		navUl.className ='';
-		
 	}
 }
 			
@@ -120,8 +123,8 @@ function isMobile() {
 //This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
 
 function detectAspectRatio() {
-	var docWidth = document.body.clientWidth;
-	var docHeight = document.body.clientHeight;
+	var docWidth = document.body.outerWidth;
+	var docHeight = document.body.outerHeight;
 	
 	var imgWidth = document.getElementById('changeout-image').naturalWidth;
 	var imgHeight = document.getElementById('changeout-image').naturalHeight;
