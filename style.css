@@ -106,11 +106,10 @@ html, #wrapper {
 
 header{
 	width: 100%;
-	height: 3.3em;
-/*	background-color: #000000;*/
+	height: 3.5em;
 	background-image: url(images/ink-banner.svg);
 	background-size: cover;
-	background-position: top left;
+	background-position: -6em top;
 	background-repeat: repeat-x;
 	color: #ffffff;
 	font-size: 1.2em;
@@ -171,6 +170,19 @@ nav>ul a:active {
 	color: aqua;
 }
 
+#droplet {
+	width: 2em;
+	height: 2em;
+	overflow: visible;
+}
+#inkScape:hover {animation: .2s ease-in-out inkGrow;}
+
+@keyframes inkGrow {
+	0% {transform: scale(1, 1)}
+	50% {transform: scale(2.3, 3)}
+	100% {transform: scale(4,4)}
+}
+
 #hamburger {display: none; position: absolute; top: .6em; right: 2.1em; z-index: 200;}
 #hamburger-menu {width: 1.8em; height: 1.8em;}
 
@@ -178,70 +190,54 @@ nav>ul a:active {
 	header div {width: 0; overflow: visible;}
 	header>div p {width: 90vw;} /*This is to keep the name visible, but the div element at 0. Prevents overlap issues in the styling.*/
 	
-	nav ul {
-		display: none;
-		position: fixed;
-		top: 1em;
-		right: 2em;
-		font-size: 1.1em;
-	}
+	nav>ul {display: none;}
 	
-	nav>ul li:hover {
-		transform: scale(1.2) translate(.3em, -.2em);
-		text-shadow: -.05em -.05em .05em #000000;
-	}
-	
-	nav>ul li:active {
-		transform: scale(1.3) translate(.3em, -.2em);
-	}
-	
-	nav>ul li, nav:hover>ul li {position: absolute; width: 4em;}
-	nav>ul li:first-child {top: 0; right: 2.1em;}
-	nav>ul li:nth-child(2) {top: 2.4em; right: 2.7em;}
-	nav>ul li:nth-child(3) {top: 4.8em; right: 2.3em;}
-	nav>ul li:nth-child(4) {top: 7.2em; right: 0em;}
-	
-	nav {
-		position: relative;
-	  height: 2em;
-		width: 2em;
-		min-width: 2em;
-		border-radius: 50em;
-		background-color: #919191;
-		overflow: visible;
-	}
+	nav>ul li, .menuShow>ul li {position: absolute; width: 4em;}
+	nav>ul li:first-child {top: 3.5em; right: 7.9em;}
+	nav>ul li:nth-child(2) {top: 5.9em; right: 8.7em;}
+	nav>ul li:nth-child(3) {top: 8.6em; right: 8.3em;}
+	nav>ul li:nth-child(4) {top: 11.2em; right: 6em;}
 
 	@keyframes menuGrow {
 		0% {
 			width: 2em;
 			height: 2em;
-			top: .15em;
-			right: .15em;
 		}
 		83%{
 			width: 19em;
 			height: 19em;
-			top: 4em;
-			right: -5em;
 		}
 		100% {
 			width: 15em; 
 			height: 15em;
-			top: 4em;
-			right: -5em;
 		}
 	}	
 	
-	nav:hover {
-		animation: .2s ease-out 0s 1 normal none running menuGrow;
-		width: 15em;
-		height: 15em;
-		top: 4em;
-		right: -5em;
+	nav {
+		position: absolute;
+		top: .5em;
+		right: .2em;
+		border-radius: 50em;
+		height: 2em;
+		width: 2em;
+		min-width: 2em;
+		background-color: #919191;
+		overflow: visible;
 	}
 	
-	nav:hover ul {display: block;}
+	/*changeout classes for javascript*/
+	.menuShow {
+		animation: .2s ease-out 0s 1 normal none running menuGrow;
+		top: -2em;
+		right: -4em;
+		width: 15em;
+		height: 15em;
+	}
+	
+	.ulHide {display: none;}
+	.ulShow {display: block;}
 	#hamburger {display: block;}
+	
 }
 
 /*============================================*/
