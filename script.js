@@ -87,13 +87,10 @@ function resetClickEvent() {
 	var navUl = document.getElementById('navUl');
 
 	if (window.outerWidth > 571.2){
-		navMenu.className = 'menuShow';
-		navUl.className = 'ulShow';
+		navMenu.className = '';
+		navUl.className = '';
 		
 		clickEvent = false;	
-	} else if (window.outerWidth <= 571.2){
-		navMenu.className='';
-		navUl.className ='';
 	}
 }
 			
