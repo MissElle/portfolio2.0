@@ -183,8 +183,125 @@ nav>ul a:active {
 	100% {transform: scale(4,4)}
 }
 
-#hamburger {display: none; position: absolute; top: .6em; right: 2.1em; z-index: 200;}
-#hamburger-menu {width: 1.8em; height: 1.8em;}
+	/*The following is all for the hamburger menus and animations*/
+
+#hamburger {
+	display: none; 
+	position: relative;
+	height: 2.7em;
+	width: 2.5em;
+	top: 0em;
+	right: .4em;
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: ease-in-out .1s;
+	-o-transition: ease-in-out .1s;
+	-moz-transition: ease-in-out .1s;
+	transition: ease-in-out .1s;
+	z-index: 200;
+	overflow: visible;
+}
+
+#hamburger>div {
+	top: 0;
+	left: 0;
+	display: block;
+	position: absolute;
+	background-color: #ffffff;
+	border-radius: 50em;
+	height: .3em;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#hamburger>div:nth-child(1) {
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: top ease-in-out .1s .1s;
+	-webkit-transition: transform linear .1s;
+	-o-transition: top ease-in-out .1s .1s;
+	-o-transition: transform linear .1s;
+	-moz-transition: top ease-in-out .1s .1s;
+	-moz-transition: transform linear .1s;
+	transition: top ease-in-out .1s .1s;
+	transition: transform linear .1s;
+	top: .3em;
+} 
+
+#hamburger>div:nth-child(2) {
+	-webkit-transition: all linear .01s .09s;
+	-o-transition: all linear .01s .09s;
+	-moz-transition: all linear .01s .09s;
+	transition: all linear .01s .09s;
+	top: 1em;
+	left: 0;
+	width: 100%;
+} 
+
+#hamburger>div:nth-child(3) {
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: top ease-in-out .1s .1s;
+	-webkit-transition: transform linear .1s;
+	-o-transition: top ease-in-out .1s .1s;
+	-o-transition: transform linear .1s;
+	-moz-transition: top ease-in-out .1s .1s;
+	-moz-transition: transform linear .1s;
+	transition: top ease-in-out .1s .1s;
+	transition: transform linear .1s;
+	top: 1.7em;
+}
+
+#hamburger.clickEvent>div:nth-child(1) {
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition: all ease-in-out .1s;
+	-webkit-transition: transform linear .1s .1s;
+	-o-transition: all ease-in-out .1s;
+	-o-transition: transform linear .1s .1s;
+	-moz-transition: all ease-in-out .1s;
+	-moz-transition: transform linear .1s .1s;
+	transition: all ease-in-out .1s;
+	transition: transform linear .1s .1s;
+	top: 1em;
+}
+
+#hamburger.clickEvent>div:nth-child(2) {
+	-webkit-transition: width linear .01s .09s;
+	-o-transition: width linear .01s .09s;
+	-moz-transition: width linear .01s .09s;
+	transition: width linear .01s .09s;
+	-webkit-transition: left linear .01s .09s;
+	-o-transition: left linear .01s .09s;
+	-moz-transition: left linear .01s .09s;
+	transition: left linear .01s .09s;
+	width: 1%;
+	left: 1.25em;
+}
+
+#hamburger.clickEvent>div:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transition: all ease-in-out .1s;
+	-webkit-transition: transform linear .1s .1s;
+	-o-transition: all ease-in-out .1s;
+	-o-transition: transform linear .1s .1s;
+	-moz-transition: all ease-in-out .1s;
+	-moz-transition: transform linear .1s .1s;
+	transition: all ease-in-out .1s;
+	transition: transform linear .1s .1s;
+	top: 1em;
+}
 
 @media all and (max-width: 35.7em) {
 	header div {width: 0; overflow: visible;}
