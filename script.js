@@ -50,8 +50,6 @@ function stickyHeader() {
 		header.className = 'static-header';
 	}
 	
-	console.log(distance + ' ' + previousScroll);
-	
 	previousScroll=window.pageYOffset; //This will be used to see if the user "scrolls up" by comparing it to the previous scroll number
 }
 
@@ -62,6 +60,7 @@ function menuFunctions(){
 	var navMenu = document.getElementById('navMenu');
 	var navUl = document.getElementById('navUl');
 	var hamburger = document.getElementById('hamburger');
+	var menuDivs = hamburger.getElementsByTagName('div');
 	
 	if(clickEvent === false){
 		navMenu.className = 'menuShow';
@@ -76,6 +75,7 @@ function menuFunctions(){
 		
 		clickEvent = false;
 	}
+	
 }
 
 //============================================//
@@ -93,6 +93,7 @@ function resetClickEvent() {
 		
 		clickEvent = false;	
 	}
+
 }
 			
 //============================================//
