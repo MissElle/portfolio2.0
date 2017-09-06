@@ -554,6 +554,9 @@ footer form {
 	text-align: center;
 }
 
+#copyright {float: left; font-size: 1.7em; letter-spacing: -.5em;}
+#company-logo {max-width: 12.6em; float: left;}
+
 @media all and (max-width: 59em){
 	.little-bio {
 	  flex-flow: column-reverse nowrap;
