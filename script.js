@@ -9,6 +9,8 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 
 //This is image data that will be pulled to fill in the image pop-up box
 
+var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ‿↼', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ₍ ὸ.ό₎ރ'];
+
 var images = [
 	{'name' : 'test',
 	'location' : 'images/test-sad-dog.jpg',
@@ -29,6 +31,7 @@ var brokenLink = {
 window.addEventListener('scroll', stickyHeader);
 document.getElementById('hamburger').addEventListener('click', menuFunctions);
 window.addEventListener('load', isMobile);
+window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', detectAspectRatio);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
@@ -86,7 +89,7 @@ function resetClickEvent() {
 	var navUl = document.getElementById('navUl');
 	var hamburger = document.getElementById('hamburger');
 
-	if (window.outerWidth > 571.2){
+	if (window.outerWidth > 610){
 		navMenu.className = '';
 		navUl.className = '';
 		hamburger.className = '';
@@ -181,4 +184,15 @@ function openImageBox(el) {
 	detectAspectRatio();
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
+}
+
+//============================================//
+//This function loads a random emoticon into the emoticon box
+
+function loadEmoticons() {
+		var emoticonSwap = document.getElementById('emoticon-swap');
+		var i = Math.floor(Math.random()*emoticons.length);
+	
+		emoticonSwap.innerHTML = '<p>' + emoticons[i] +'</p>';
+	
 }
