@@ -118,7 +118,6 @@ header{
 	background-size: 100em;
 	background-position: -6em -.05em;
 	background-repeat: repeat-x;
-	background-attachment: fixed;
 	color: #ffffff;
 	font-size: 1.2em;
 	display: flex;
@@ -358,7 +357,6 @@ nav>ul a:active {
 		height: 30em;
 		width: 30em;
 		background-color: #000000;
-		background-attachment: fixed;
 	}
 	
 	.ulShow {display: block;}
@@ -382,9 +380,13 @@ article p, figure {
 	padding: 0 .5em .5em .5em;
 }
 
-h1:last-child, h2:last-child, h3:last-child, h4:last-child {
-	margin-bottom: 1em;
-}
+#main h1, #main h2, #main h3, #main h4 {margin-right: .5em; margin-left: .5em;}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {margin-top: .5em;}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child {margin-bottom: 1em;}
+
+footer h1, footer h2, footer h3, footer h4 {margin: 1em 0;}
 
 p, figcaption {line-height: 1.1em; text-align: justify;}
 
