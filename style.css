@@ -10,10 +10,22 @@
 	width: 100%;
 	max-width: 65em;
 	margin: 0 auto;
+	overflow-x: hidden;
 }
 
-html, #wrapper {
-		overflow-x: hidden;
+html{
+	overflow-x: hidden;
+	background: #000000;
+	background: -webkit-linear-gradient(top left, #ffffff, #b8c2d6, #585d66);
+	background: -0-linear-gradient(top left, #ffffff, #b8c2d6, #585d66);
+	background: -moz-linear-gradient(top left, #ffffff, #b8c2d6, #585d66);
+	background: linear-gradient(to top left, #ffffff, #b8c2d6, #585d66);
+}
+
+body {
+	background-image: url(images/halftone.svg);
+	background-repeat: repeat;
+	background-size: 1.3em;
 }
 
 /*============================================*/
