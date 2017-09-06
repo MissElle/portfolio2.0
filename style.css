@@ -175,7 +175,7 @@ nav>ul li:active {
 }
 
 nav>ul a:active {
-	color: aqua;
+	color: #89c2ff;
 }
 
 #hamburger {
@@ -536,10 +536,10 @@ footer form {
 
 #social-footer>ul li:active {
 	transform: scale(1.5) translate(-.2em, 0);
-	color: aqua;
+	color: #89c2ff;
 }
 
-#social-footer>ul a:active {color: aqua;}
+#social-footer>ul a:active {color: #89c2ff}
 
 #social-footer ul {
 	display: flex;
