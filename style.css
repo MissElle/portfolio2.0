@@ -354,6 +354,7 @@ nav>ul a:active {
 		height: 30em;
 		width: 30em;
 		background-color: #000000;
+		background-attachment: fixed;
 	}
 	
 	.ulShow {display: block;}
@@ -624,52 +625,18 @@ button {
 	input {width: 75%;}
 }
 
-/*
-font-family: 'Slabo 27px', serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Droid Sans', sans-serif;
-font-family: 'Playfair Display', serif;
-font-family: 'Indie Flower', cursive;
-font-family: 'Cabin', sans-serif;
-font-family: 'Archivo Narrow', sans-serif;
-font-family: 'EB Garamond', serif;
-font-family: 'Permanent Marker', cursive;
-font-family: 'Sedgwick Ave', cursive;
-font-family: 'Mada', sans-serif;
-font-family: 'Alegreya Sans', sans-serif;
-font-family: 'Courgette', cursive;
-font-family: 'Didact Gothic', sans-serif;
-font-family: 'Handlee', cursive;
-font-family: 'Caveat', cursive;
-font-family: 'Bellefair', serif;
-font-family: 'Amaranth', sans-serif;
-font-family: 'Neucha', cursive;
-font-family: 'Molengo', sans-serif;
-font-family: 'Montserrat Alternates', sans-serif;
-font-family: 'Reem Kufi', sans-serif;
-font-family: 'Overlock', cursive;
-font-family: 'Patrick Hand SC', cursive;
-font-family: 'Marmelad', sans-serif;
-font-family: 'Rosario', sans-serif;
-font-family: 'Coustard', serif;
-font-family: 'Goudy Bookletter 1911', serif;
-font-family: 'Itim', cursive;
-font-family: 'Capriola', sans-serif;
-font-family: 'Puritan', sans-serif;
-font-family: 'Happy Monkey', cursive;
-font-family: 'Trocchi', serif;
-font-family: 'NTR', sans-serif;
-font-family: 'Imprima', sans-serif;
-font-family: 'Fondamento', cursive;
-font-family: 'Sniglet', cursive;
-font-family: 'Delius Swash Caps', cursive;
-font-family: 'El Messiri', sans-serif;
-font-family: 'Mandali', sans-serif;
-font-family: 'Balthazar', serif;
-font-family: 'Aref Ruqaa', serif;
-font-family: 'Averia Libre', cursive;
-font-family: 'Nova Slim', cursive;
-font-family: 'Laila', serif;
-font-family: 'Cagliostro', sans-serif;
-font-family: 'Fresca', sans-serif;
-font-family: 'Meera Inimai', sans-serif;*/
+/*============================================*/
+/*stylings for fonts*/
+
+p, button, form, input {
+	font-family: 'Balthazar', serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Amaranth', sans-serif;
+}
+
+nav>ul{
+	font-weight: bolder;
+	font-family: 'Handlee', cursive;
+}
