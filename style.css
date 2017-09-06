@@ -6,6 +6,7 @@
 
 #wrapper {
 	position: relative;
+	background-color: #ffffff;
 	width: 100%;
 	max-width: 65em;
 	margin: 0 auto;
