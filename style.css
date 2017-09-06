@@ -38,6 +38,7 @@ html, #wrapper {
 	width: 90%;
 	height: 95%;
 	overflow: hidden;
+	border: .35em double #585d66;
 }
 
 #image-side {
@@ -598,8 +599,20 @@ input {
 	float: right;
 }
 
-input:first-of-type {border-radius: .3em .3em 0 0;}
-input:last-of-type {border-radius: 0 0.3em .3em;}
+textarea {border: .35em double #9fa7b5;}
+input {
+	border-right: .35em double #9fa7b5;
+	border-left: .35em double #9fa7b5;
+	border-top: .1em solid #9fa7b5;
+	border-bottom: .1em solid #9fa7b5;
+}
+input:first-of-type {
+	border-top: .35em double #9fa7b5;
+	border-radius: .3em .3em 0 0;}
+input:last-of-type {
+	border-radius: 0 0 0.3em .3em;
+	border-bottom: .35em double #9fa7b5;
+}
 
 label {width: 15%; float: left;}
 
