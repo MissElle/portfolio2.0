@@ -181,10 +181,11 @@ nav>ul a:active {
 #hamburger {
 	display: none; 
 	position: absolute;
-	height: 4em;
+	height: 2.3em;
 	width: 1.5em;
 	top: 17%;
 	right: .93em;
+	cursor: pointer;
 	-webkit-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
@@ -601,17 +602,14 @@ footer form {
 
 input {
 	display: block;
-	width: 85%;
-	float: right;
-}
-
-textarea {border: .35em double #9fa7b5;}
-input {
 	border-right: .35em double #9fa7b5;
 	border-left: .35em double #9fa7b5;
 	border-top: .1em solid #9fa7b5;
 	border-bottom: .1em solid #9fa7b5;
+	width: 85%;
+	float: right;
 }
+
 input:first-of-type {
 	border-top: .35em double #9fa7b5;
 	border-radius: .3em .3em 0 0;}
@@ -620,20 +618,49 @@ input:last-of-type {
 	border-bottom: .35em double #9fa7b5;
 }
 
-label {width: 15%; float: left;}
+label {
+	width: 15%; 
+	float: left; 
+	font-size: 1.1em;
+	text-align: left;
+}
 
 textarea {
 	width: 100%; max-width: 100%; 
 	height: 20em; max-height: 20em;
 	border-radius: .3em;
+	border: .35em double #9fa7b5;
 	resize: none;
+	font-size: 1.1em;
+	text-align: left;
 }
 
 button {
 	float: right; 
-	margin-top: 1em;
-	padding: .2em;
-	border-radius: .2em;
+	text-align: center;
+	margin: .3em 0;
+	width: 3.2em;
+	max-width: 3.2em;
+	min-width: 3.2em;
+	height: 2em;
+	max-height: 2em;
+	min-height: 2em;
+	border-radius: .35em;
+	font-size: 1.15em;
+	background-color: #ffffff;
+	border: .2em double #9fa7b5;
+	color: #48494c;
+	transition: font-size .1s ease-in-out;
+	cursor: pointer;
+}
+
+button:hover {
+	font-size: 1.25em;
+}
+
+button:active {
+	font-size: 1.25em;
+	color: #89c2ff;
 }
 
 @media all and (max-width: 24.5em) {
@@ -651,12 +678,7 @@ p, button, form, input, div, textarea {
 	font-family: 'Balthazar', serif;
 }
 
-textarea {
-	font-size: 1.1em;
-	text-align: left;
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3, h4, button {
 	font-family: 'Amaranth', sans-serif;
 }
 
