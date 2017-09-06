@@ -644,8 +644,13 @@ button {
 /*============================================*/
 /*stylings for fonts*/
 
-p, button, form, input {
+p, button, form, input, div, textarea {
 	font-family: 'Balthazar', serif;
+}
+
+textarea {
+	font-size: 1.1em;
+	text-align: left;
 }
 
 h1, h2, h3, h4 {
