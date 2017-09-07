@@ -575,7 +575,7 @@ footer form {
 	text-align: center;
 }
 
-#copyright {float: left; font-size: 1.7em; letter-spacing: -.5em;}
+#copyright {float: left; font-size: 1.2em; padding: 0 0.2em; margin-top: -.2em; font-family:'Amaranth', sans-serif;}
 #company-logo {max-width: 12.6em; float: left;}
 
 @media all and (max-width: 59em){
