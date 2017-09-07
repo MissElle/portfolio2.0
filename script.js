@@ -1,4 +1,4 @@
-//============================================//
+﻿//============================================//
 //Wireframe javascript - portfolio 2.0
 //============================================//
 // This holds global variables//
@@ -9,7 +9,7 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 
 //This is image data that will be pulled to fill in the image pop-up box
 
-var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ‿↼', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ₍ ὸ.ό₎ރ'];
+var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ‿↼', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ(ὸ.ό)ރ'];
 
 var images = [
 	{'name' : 'test',
