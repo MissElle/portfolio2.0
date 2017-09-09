@@ -128,8 +128,8 @@ function isMobile() {
 //This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
 
 function detectAspectRatio() {
-	var docWidth = window.outerWidth;
-	var docHeight = window.outerHeight;
+	var docWidth = window.innerWidth;
+	var docHeight = window.innerHeight;
 	
 	var imgWidth = document.getElementById('changeout-image').naturalWidth;
 	var imgHeight = document.getElementById('changeout-image').naturalHeight;
@@ -185,7 +185,8 @@ function openImageBox(el) {
 		}
 	}
 
-	detectAspectRatio();
+	changeoutImage.onload = detectAspectRatio;
+	
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
 }
