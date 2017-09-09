@@ -7,9 +7,6 @@ var previousScroll = 0; //This updates after every scroll to afix the header onl
 
 var clickEvent = false; //This will determine if the menu should be opened or closed
 
-var imgRatio = 0; //This will be set by clicking figure tags openImageBox() and called on with detectAspectRatio()
-var windowRatio = window.innerWidth/window.innerHeight;
-
 //This is image data that will be pulled to fill in the image pop-up box
 
 var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ‿↼', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ(ὸ.ό)ރ'];
@@ -45,7 +42,7 @@ document.getElementById('cross').addEventListener('click', closeImageBox);
 
 var figures = document.getElementsByTagName('figure');
 for(var i=0; i<figures.length; ++i){
-	figures[i].addEventListener('click', openImageBox);
+figures[i].addEventListener('click', openImageBox);
 }
 //============================================//
 //This function helps the sticky header scroll foward and hide appropriately
@@ -128,6 +125,36 @@ function isMobile() {
 //isMobile() test mostly derived from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 
 //============================================//
+//This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
+
+function detectAspectRatio() {
+	var docWidth = window.outerWidth;
+	var docHeight = window.outerHeight;
+	
+	var imgWidth = document.getElementById('changeout-image').naturalWidth;
+	var imgHeight = document.getElementById('changeout-image').naturalHeight;
+	
+	var descriptionSide = document.getElementById('description-side');
+	var imageSide = document.getElementById('image-side');
+	
+	var windowRatio = docWidth/docHeight;
+	var imageRatio = imgWidth/imgHeight;
+	
+	if(windowRatio >= imageRatio) {
+		imageSide.style.height = '100%';
+		imageSide.style.width = '70%';
+		descriptionSide.style.width = '30%';
+		descriptionSide.style.height = '100%';
+	
+	}else {
+		imageSide.style.height = '70%';
+		imageSide.style.width = '100%';
+		descriptionSide.style.width ='100%';
+		descriptionSide.style.height = '30%';
+	}
+}
+
+//============================================//
 //This function will close the #image-box
 
 function closeImageBox() {
@@ -149,60 +176,19 @@ function openImageBox(el) {
 		
 		if (imageName.match(elName)){
 			if (elName === imageName){
-				if (window.outerWidth < 610){
-					changeoutImage.src = images[i].locationSmall;
-				}else {
-					changeoutImage.src = images[i].location;
-				}
+				changeoutImage.src = images[i].location;
 				changeoutText.innerHTML = images[i].description;
-				
-				imgRatio = changeoutImage.naturalWidth/changeoutImage.naturalHeight;
-				
 			}else {
 				changeoutImage.src = brokenLink.location;
 				changeoutText.innerHTML = brokenLink.description;
-				
-				imgRatio = changeoutImage.naturalWidth/changeoutImage.naturalHeight;
-				
 			}
 		}
 	}
-	
+
 	detectAspectRatio();
-	
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
-	
 }
-
-//============================================//
-//This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
-
-function detectAspectRatio() {
-	var docWidth = window.outerWidth;
-	var docHeight = window.outerHeight;
-	
-	var descriptionSide = document.getElementById('description-side');
-	var imageSide = document.getElementById('image-side');
-	
-	windowRatio = docWidth/docHeight;
-	
-	if(windowRatio >= imgRatio) {
-		imageSide.style.height = '100%';
-		imageSide.style.width = '70%';
-		descriptionSide.style.width = '30%';
-		descriptionSide.style.height = '100%';
-
-	}else {
-		imageSide.style.height = '70%';
-		imageSide.style.width = '100%';
-		descriptionSide.style.width ='100%';
-		descriptionSide.style.height = '30%';
-	}
-	
-	console.log(imgRatio);
-}
-	
 
 //============================================//
 //This function loads a random emoticon into the emoticon box
