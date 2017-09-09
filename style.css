@@ -461,6 +461,7 @@ figcaption {
 	position: relative;
 	top: 0;
 	width: auto;
+	min-width: 100%;
 	max-width: 33em;
 	padding: 1em;
 	text-align: justify;
