@@ -479,9 +479,9 @@ figcaption.mobile {
 	vertical-align: top;
 	background-color: #d8d8d8;
 	height: 6em;
-	width: 100%;
-	max-width: 100%;
-	min-width: 100%;
+	width: 33.33%;
+	max-width: 33.33%;
+	min-width: 33.33%;
 }
 
 figure:hover figcaption.not-mobile {
@@ -490,6 +490,11 @@ figure:hover figcaption.not-mobile {
 
 @media all and (max-width: 59em){
 	figure {width: 50%;}
+	figcaption.mobile {
+	width: 50%;
+	max-width: 50%;
+	min-width: 50%;
+}
 }
 
 @media all and (max-width: 41.8em) {
@@ -498,6 +503,11 @@ figure:hover figcaption.not-mobile {
 		padding: 0;
 		margin: 0;
 	}
+	figcaption.mobile {
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+}
 }
 
 .portrait {
