@@ -461,7 +461,6 @@ figcaption {
 	position: relative;
 	top: 0;
 	width: auto;
-	min-width: 100%;
 	max-width: 33em;
 	padding: 1em;
 	text-align: justify;
@@ -480,6 +479,8 @@ figcaption.mobile {
 	vertical-align: top;
 	background-color: #d8d8d8;
 	height: 6em;
+	width: 100%;
+	max-width: 100%;
 }
 
 figure:hover figcaption.not-mobile {
