@@ -13,19 +13,19 @@ var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ_ಠ', '^_^', '=^.^=', '
 
 var images = [
 	{'name' : 'illustration-colors-peter-buxton',
-	'location' : 'images/illustration-colors-peter-buxton.jpg',
-	'locationSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
+	'source' : 'images/illustration-colors-peter-buxton.jpg',
+	'sourceSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
 	'description' : '<h1>Peter Buxton</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Based upon the true Peter Buxton who helped take down one of the most racist "studies" conducted under the name of medicine.</p>'},
 	{'name' : 'test',
-	'location' : 'images/test-sad-dog.jpg',
+	'source' : 'images/test-sad-dog.jpg',
 	'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'},
 	{'name' : 'notSo',
-	 'location' : 'images/test-sad-cat.jpg',
+	 'source' : 'images/test-sad-cat.jpg',
 	 'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'
 	}];
 
 var brokenLink = {
-	'location' : 'images/shrug.svg',
+	'source' : 'images/shrug.svg',
 	'description' : '<h2>Uh Oh!<br> A Broken Link!</h2> <br><p>It looks like the artist programmed this site wrong! Silly Artist, thinking she&#39;s a programmer...</p>'
 };
 
@@ -36,10 +36,12 @@ window.addEventListener('scroll', stickyHeader);
 document.getElementById('hamburger').addEventListener('click', menuFunctions);
 window.addEventListener('load', isMobile);
 window.addEventListener('load', loadEmoticons);
+document.getElementById('changeout-image').addEventListener('load', detectAspectRatio);
 window.addEventListener('resize', detectAspectRatio);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
 
+window.addEventListener('load', generatePreviews);
 var figures = document.getElementsByTagName('figure');
 for(var i=0; i<figures.length; ++i){
 figures[i].addEventListener('click', openImageBox);
@@ -176,19 +178,28 @@ function openImageBox(el) {
 		
 		if (imageName.match(elName)){
 			if (elName === imageName){
-				changeoutImage.src = images[i].location;
+				if (window.outerWidth > 610){
+					changeoutImage.src = images[i].sourceSmall;
+				}else{
+					changeoutImage.src = images[i].source;
+				}
 				changeoutText.innerHTML = images[i].description;
 			}else {
-				changeoutImage.src = brokenLink.location;
+				changeoutImage.src = brokenLink.source;
 				changeoutText.innerHTML = brokenLink.description;
 			}
 		}
 	}
-
-	changeoutImage.onload = detectAspectRatio;
 	
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
+}
+
+//============================================//
+//this function will generate previews for the different pages 
+
+function generatePreviews() {
+	
 }
 
 //============================================//
