@@ -26,11 +26,15 @@ var images = [
 	'sourceSmall' : 'images/illustration-colors-al-400.jpg',
 	'preview' : 'images/illustration-colors-al-preview.jpg',
 	'description' : '<h1>Subject Al</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Fictional character Al is an untreated syphilis patient.</p>'},
-	{'name' : 'test',
+	{'categoryMain' : 'Test',
+	'categorySub' : 'Testing',
+	'name' : 'test',
 	'source' : 'images/test-sad-dog.jpg',
 	 'sourceSmall' : 'images/test-sad-dog.jpg',
 	'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'},
-	{'name' : 'notSo',
+	{'categoryMain' : 'Test',
+	 'categorySub' : 'Testing',
+	 'name' : 'notSo',
 	 'source' : 'images/test-sad-cat.jpg',
 	 'sourceSmall' : 'images/test-sad-cat.jpg',
 	 'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'
@@ -221,6 +225,9 @@ function loadEmoticons() {
 //This function loads all preview images/content
 
 function generatePreviews() {
+	var mainImages = images.findIndex((image) => image.categoryMain); //shortcut for if statements, 
+	var subImages = images.findIndex((image) => image.categorySub); //shortcut derived from following: https://stackoverflow.com/questions/8313350/javascript-indexof-on-an-array-of-objects
+	
 	var mainPage = document.getElementById('main');
 	var pageH1 = document.createElement('h1');
 	var pageH1Text;
@@ -238,47 +245,46 @@ function generatePreviews() {
 		pageH1.appendChild(pageH1text);
 		mainPage.appendChild(pageH1);
 		
-		for(var i=0; i<images.length; ++i){
-			if (images[i].categoryMain === 'Concept Art'){
+			if((mainImages === 'Concept Art') > -1){
+				console.log("I'm returning true!");
 				var newArticle = document.createElement('article');
 				var newDiv = document.createElement('div');
 				newDiv.className = 'flex-headings';
 				var newH2 = document.createElement('h2');
-				var newH2Text = document.createTextNode(images[i].categoryMain);
+				var newH2Text = document.createTextNode('Concept Art');
 				
 				newH2.appendChild(newH2Text);
 				newDiv.appendChild(newH2);
 				newArticle.appendChild(newDiv);
-				mainPage.appendChild(newArticle);	
+				mainPage.appendChild(newArticle);
 				
-					if(images[i].categorySub === 'Colors: The Tuskegee Studies'){
-						var newH4 = document.createElement('h4');
-						var newH4Text = document.createTextNode(images[i].categorySub);
-						newH4.appendChild(newH4Text);
-						console.log("this is working");	
-						newDiv.appendChild(newH4);
+				if((subImages === 'Colors: The Tuskegee Studies') > -1){
+					console.log("I'm also returning true");
+					var newH4 = document.createElement('h4');
+					var newH4Text = document.createTextNode('Colors: The Tuskegee Studies');
+					newH4.appendChild(newH4Text);
+					newDiv.appendChild(newH4);
 						
-						var newFigure = document.createElement('figure');
+						for(var i=0; i<images.length; ++i){
+							var newFigure = document.createElement('figure');
 							
-						var newFigcaption = document.createElement('figcaption');
-						var newFigcaptionText = images[i].description;
-						newFigcaption.className = 'not-mobile';
-						newFigcaption.innerHTML = newFigcaptionText;
+							var newFigcaption = document.createElement('figcaption');
+							var newFigcaptionText = images[i].description;
+							newFigcaption.className = 'not-mobile';
+							newFigcaption.innerHTML = newFigcaptionText;
 
-							
-						var newImg = document.createElement('img');
-						newImg.className = 'preview-link';
-						newImg.src = images[i].preview;
-						newFigure.appendChild(newImg);
-						newFigure.id = images[i].name;
+							var newImg = document.createElement('img');
+							newImg.className = 'preview-link';
+							newImg.src = images[i].preview;
+							newFigure.appendChild(newImg);
+							newFigure.id = images[i].name;
 						
-						newFigure.addEventListener('click', openImageBox);
-						newFigure.appendChild(newFigcaption);
-						newArticle.appendChild(newFigure); 
-					}
-			}
+							newFigure.addEventListener('click', openImageBox);
+							newFigure.appendChild(newFigcaption);
+							newArticle.appendChild(newFigure); 
+						}
+				}
 		}	
-		
 	}else if (webdev !== null){
 		console.log('you are in the Web Development page!');
 	}else{
