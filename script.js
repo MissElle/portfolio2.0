@@ -1,5 +1,5 @@
 ﻿//============================================//
-//Wireframe javascript - portfolio 2.0
+//javascript - portfolio 2.0
 //============================================//
 // This holds global variables//
 
@@ -205,74 +205,6 @@ function openImageBox(el) {
 	
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
-}
-
-//============================================//
-//this function will generate previews for the different pages 
-
-function generatePreviews() {
-	var mainPage = document.getElementById('main');
-	var pageH1 = document.createElement('h1');
-	var pageH1Text;
-	
-	var design = document.getElementById('design');
-	var illustration = document.getElementById('illustration');
-	var webdev = document.getElementById('webdev');
-	
-	if (design !== null){
-		console.log('you are in the Design page!');
-	}else if (illustration !== null){
-		console.log('you are in the Illustration page!');
-		
-		pageH1text = document.createTextNode('Illustration');
-		pageH1.appendChild(pageH1text);
-		mainPage.appendChild(pageH1);
-		
-		for(var i=0; i<images.length; ++i){
-			if (images[i].categoryMain === 'Concept Art'){
-				var newArticle = document.createElement('article');	
-				var newDiv = document.createElement('div');
-				newDiv.className = 'flex-headings';
-				var newH2 = document.createElement('h2');
-				var newH2Text = document.createTextNode(images[i].categoryMain);
-				
-				newH2.appendChild(newH2Text);
-				newDiv.appendChild(newH2);
-				newArticle.appendChild(newDiv);
-				mainPage.appendChild(newArticle);	
-				
-					if(images[i].categorySub === 'Colors: The Tuskegee Studies'){
-						var newH4 = document.createElement('h4');
-						var newH4Text = document.createTextNode(images[i].categorySub);
-						newH4.appendChild(newH4Text);
-						console.log("this is working");	
-						newDiv.appendChild(newH4);
-						
-						var newFigure = document.createElement('figure');
-							
-						var newFigcaption = document.createElement('figcaption');
-						var newFigcaptionText = images[i].description;
-						newFigcaption.className = 'not-mobile';
-						newFigcaption.innerHTML = newFigcaptionText;
-
-							
-						var newImg = document.createElement('img');
-						newImg.className = 'preview-link';
-						newImg.src = images[i].preview;
-						newFigure.appendChild(newImg);
-						newFigure.id = images[i].name;
-						
-						newFigure.appendChild(newFigcaption);
-						newArticle.appendChild(newFigure); 
-					}
-			}
-		}	
-		
-	}else if (webdev !== null){
-		console.log('you are in the Web Development page!');
-	}else{
-		console.log ('this is not a page with generation');
-	}
 }
 
 //============================================//
