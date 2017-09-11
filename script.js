@@ -19,7 +19,7 @@ var images = [
 	'sourceSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
 	'preview' : 'images/illustration-colors-peter-buxton-preview.jpg',
 	'description' : '<h1>Peter Buxton</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Based upon the true Peter Buxton who helped take down one of the most racist "studies" conducted under the name of medicine.</p>'},
-	{'categoryMain' : 'concept-art',
+	{'categoryMain' : 'Concept Art',
 	'categorySub' : 'Colors: The Tuskegee Studies',
 	'name' : 'illustration-colors-al',
 	'source' : 'images/illustration-colors-al.jpg',
