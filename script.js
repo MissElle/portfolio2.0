@@ -11,17 +11,15 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 
 var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ_ಠ', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ(ὸ.ό)ރ'];
 
-var images = [
-	{'categoryMain' : 'Concept Art',
-	'categorySub' : 'Colors: The Tuskegee Studies',
-	'name' : 'illustration-colors-peter-buxton',
+var imgColors = [
+	{'name' : 'illustration-colors-peter-buxton',
+	'arrayName' : 'imgColors',
 	'source' : 'images/illustration-colors-peter-buxton.jpg',
 	'sourceSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
 	'preview' : 'images/illustration-colors-peter-buxton-preview.jpg',
 	'description' : '<h1>Peter Buxton</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Based upon the true Peter Buxton who helped take down one of the most racist "studies" conducted under the name of medicine.</p>'},
-	{'categoryMain' : 'Concept Art',
-	'categorySub' : 'Colors: The Tuskegee Studies',
-	'name' : 'illustration-colors-al',
+	{'name' : 'illustration-colors-al',
+	'arrayName' : 'imgColors',
 	'source' : 'images/illustration-colors-al.jpg',
 	'sourceSmall' : 'images/illustration-colors-al-400.jpg',
 	'preview' : 'images/illustration-colors-al-preview.jpg',
@@ -170,23 +168,24 @@ function closeImageBox() {
 //============================================//
 //This function opens the #image-box with the pulled data 
 
-function openImageBox(el) {
+function openImageBox(el, array) {
 	var imgBox =document.getElementById('dark-box');
 	var elName = this.id;
+	var array = this.className;
 	
-	for (var i=0; i<images.length; ++i){
-		var imageName = images[i].name;
+	for (var i=0; i<array.length; ++i){
+		var imageName = array[i].name;
 		var changeoutText = document.getElementById('changeout-text');
 		var changeoutImage = document.getElementById('changeout-image');
 		
 		if (imageName.match(elName)){
 			if (elName === imageName){
 				if (window.outerWidth > 610){
-					changeoutImage.src = images[i].sourceSmall;
+					changeoutImage.src = array[i].sourceSmall;
 				}else{
-					changeoutImage.src = images[i].source;
+					changeoutImage.src = array[i].source;
 				}
-				changeoutText.innerHTML = images[i].description;
+				changeoutText.innerHTML = array[i].description;
 			}else {
 				changeoutImage.src = brokenLink.source;
 				changeoutText.innerHTML = brokenLink.description;
@@ -209,7 +208,7 @@ function loadEmoticons() {
 }
 
 //============================================//
-//This function loads all preview images/content
+//This function detects which page the user is on
 
 function detectPage() {
 	var design = document.getElementById('design');
@@ -229,7 +228,7 @@ function detectPage() {
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(pageH1);
 		mainPage.appendChild(newH2);
-		generatePreviews('Colors: The Tuskegee Studies', images);
+		generateImgPreviews('Colors: The Tuskegee Studies', imgColors);
 	}else if (webdev !== null){
 		console.log('you are in the Web Development page!');
 	}else{
@@ -238,9 +237,9 @@ function detectPage() {
 }
 
 //============================================//
-//This function detects which page you are on.
+//This function loads all preview images/content for non-interactive imagery
 
-function generatePreviews(name, arr) {
+function generateImgPreviews(name, array) {
 	var mainPage = document.getElementById('main');
 	
 	var newArticle = document.createElement('article');
@@ -254,21 +253,60 @@ function generatePreviews(name, arr) {
 	newArticle.appendChild(newH4);
 	newArticle.appendChild(newDiv);
 						
-		for(var i=0; i<images.length; ++i){
+		for(var i=0; i<array.length; ++i){
 			var newFigure = document.createElement('figure');
 			var newFigcaption = document.createElement('figcaption');
-			var newFigcaptionText = images[i].description;
+			var newFigcaptionText = array[i].description;
 			newFigcaption.className = 'not-mobile';
 			newFigcaption.innerHTML = newFigcaptionText;
 
 			var newImg = document.createElement('img');
 			newImg.className = 'preview-link';
-			newImg.src = images[i].preview;
+			newImg.src = array[i].preview;
 			newFigure.appendChild(newImg);
-			newFigure.id = images[i].name;
+			newFigure.id = array[i].name;
+			newFigure.className = array[i].arrayName;
 						
-			newFigure.addEventListener('click', openImageBox);
+			newFigure.addEventListener('click', array, openImageBox);
 			newFigure.appendChild(newFigcaption);
 			newDiv.appendChild(newFigure); 
+		}
+}
+
+//============================================//
+//This function loads all preview images/content for web pages
+
+function generateWebPreviews(name, array) {
+	var mainPage = document.getElementById('main');
+	
+	var newArticle = document.createElement('article');
+	mainPage.appendChild(newArticle);
+	var newDiv = document.createElement('div');
+	newDiv.className = 'flex-images';
+	
+	var newH4 = document.createElement('h4');
+	var newH4Text = document.createTextNode(name);
+	newH4.appendChild(newH4Text);
+	newArticle.appendChild(newH4);
+	newArticle.appendChild(newDiv);
+						
+		for(var i=0; i<array.length; ++i){
+			var newLink = document.createElement('a');
+			newLink.href = array[i].hyperlink;
+			var newFigure = document.createElement('figure');
+			var newFigcaption = document.createElement('figcaption');
+			var newFigcaptionText = array[i].description;
+			newFigcaption.className = 'not-mobile';
+			newFigcaption.innerHTML = newFigcaptionText;
+
+			var newImg = document.createElement('img');
+			newImg.className = 'preview-link';
+			newImg.src = array[i].preview;
+			newFigure.appendChild(newImg);
+			newFigure.id = array[i].name;
+			
+			newFigure.appendChild(newFigcaption);
+			newLink.appendChild(newFigure);
+			newDiv.appendChild(newLink); 
 		}
 }
