@@ -11,15 +11,15 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 
 var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ_ಠ', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ(ὸ.ό)ރ'];
 
-var imgColors = [
+var images = [
 	{'name' : 'illustration-colors-peter-buxton',
-	'arrayName' : 'imgColors',
+	'category' : 'Colors: The Tuskegee Studies',
 	'source' : 'images/illustration-colors-peter-buxton.jpg',
 	'sourceSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
 	'preview' : 'images/illustration-colors-peter-buxton-preview.jpg',
 	'description' : '<h1>Peter Buxton</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Based upon the true Peter Buxton who helped take down one of the most racist "studies" conducted under the name of medicine.</p>'},
 	{'name' : 'illustration-colors-al',
-	'arrayName' : 'imgColors',
+	'category' : 'Colors: The Tuskegee Studies',
 	'source' : 'images/illustration-colors-al.jpg',
 	'sourceSmall' : 'images/illustration-colors-al-400.jpg',
 	'preview' : 'images/illustration-colors-al-preview.jpg',
@@ -168,24 +168,24 @@ function closeImageBox() {
 //============================================//
 //This function opens the #image-box with the pulled data 
 
-function openImageBox(el, array) {
+function openImageBox(el) {
 	var imgBox =document.getElementById('dark-box');
 	var elName = this.id;
-	var array = this.className;
 	
-	for (var i=0; i<array.length; ++i){
-		var imageName = array[i].name;
+	for (var i=0; i<images.length; ++i){
+		var imageName = images[i].name;
+		
 		var changeoutText = document.getElementById('changeout-text');
 		var changeoutImage = document.getElementById('changeout-image');
 		
 		if (imageName.match(elName)){
 			if (elName === imageName){
 				if (window.outerWidth > 610){
-					changeoutImage.src = array[i].sourceSmall;
+					changeoutImage.src = images[i].sourceSmall;
 				}else{
-					changeoutImage.src = array[i].source;
+					changeoutImage.src = images[i].source;
 				}
-				changeoutText.innerHTML = array[i].description;
+				changeoutText.innerHTML = images[i].description;
 			}else {
 				changeoutImage.src = brokenLink.source;
 				changeoutText.innerHTML = brokenLink.description;
@@ -228,7 +228,7 @@ function detectPage() {
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(pageH1);
 		mainPage.appendChild(newH2);
-		generateImgPreviews('Colors: The Tuskegee Studies', imgColors);
+		generateImgPreviews('Colors: The Tuskegee Studies', images);
 	}else if (webdev !== null){
 		console.log('you are in the Web Development page!');
 	}else{
@@ -254,22 +254,25 @@ function generateImgPreviews(name, array) {
 	newArticle.appendChild(newDiv);
 						
 		for(var i=0; i<array.length; ++i){
-			var newFigure = document.createElement('figure');
-			var newFigcaption = document.createElement('figcaption');
-			var newFigcaptionText = array[i].description;
-			newFigcaption.className = 'not-mobile';
-			newFigcaption.innerHTML = newFigcaptionText;
+			var imageCategory = images[i].category;
+			if(imageCategory.match(name)){
+				var newFigure = document.createElement('figure');
+				var newFigcaption = document.createElement('figcaption');
+				var newFigcaptionText = array[i].description;
+				newFigcaption.className = 'not-mobile';
+				newFigcaption.innerHTML = newFigcaptionText;
 
-			var newImg = document.createElement('img');
-			newImg.className = 'preview-link';
-			newImg.src = array[i].preview;
-			newFigure.appendChild(newImg);
-			newFigure.id = array[i].name;
-			newFigure.className = array[i].arrayName;
-						
-			newFigure.addEventListener('click', array, openImageBox);
-			newFigure.appendChild(newFigcaption);
-			newDiv.appendChild(newFigure); 
+				var newImg = document.createElement('img');
+				newImg.className = 'preview-link';
+				newImg.src = array[i].preview;
+				newFigure.appendChild(newImg);
+				newFigure.id = array[i].name;
+				newFigure.className = array[i].arrayName;
+
+				newFigure.addEventListener('click', openImageBox);
+				newFigure.appendChild(newFigcaption);
+				newDiv.appendChild(newFigure); 
+				}
 		}
 }
 
