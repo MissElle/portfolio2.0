@@ -448,6 +448,12 @@ figure {
 	object-position: center;
 }
 
+@media all and (max-width: 41.8em){
+	.preview-link {
+		object-position: top center;
+	}
+}
+
 figure img {
 	transition: opacity .3s ease-out;
 }
@@ -504,10 +510,10 @@ figure:hover figcaption.not-mobile {
 		margin: 0;
 	}
 	figcaption.mobile {
-	width: 100%;
-	max-width: 100%;
-	min-width: 100%;
-}
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
 }
 
 .portrait {
