@@ -25,20 +25,7 @@ var images = [
 	'source' : 'images/illustration-colors-al.jpg',
 	'sourceSmall' : 'images/illustration-colors-al-400.jpg',
 	'preview' : 'images/illustration-colors-al-preview.jpg',
-	'description' : '<h1>Subject Al</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Fictional character Al is an untreated syphilis patient.</p>'},
-	{'categoryMain' : 'Test',
-	'categorySub' : 'Testing',
-	'name' : 'test',
-	'source' : 'images/test-sad-dog.jpg',
-	 'sourceSmall' : 'images/test-sad-dog.jpg',
-	'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'},
-	{'categoryMain' : 'Test',
-	 'categorySub' : 'Testing',
-	 'name' : 'notSo',
-	 'source' : 'images/test-sad-cat.jpg',
-	 'sourceSmall' : 'images/test-sad-cat.jpg',
-	 'description' : '<p>This is a test paragraph</p><p>this is a second test paragraph</p>'
-	}];
+	'description' : '<h1>Subject Al</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Fictional character Al is an untreated syphilis patient.</p>'}];
 
 var brokenLink = {
 	'source' : 'images/shrug.svg',
