@@ -57,7 +57,7 @@ window.addEventListener('resize', detectAspectRatio);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
 
-window.addEventListener('load', generatePreviews);
+window.addEventListener('load', detectPage);
 var figures = document.getElementsByTagName('figure');
 for(var i=0; i<figures.length; ++i){
 	figures[i].addEventListener('click', openImageBox);
@@ -224,14 +224,7 @@ function loadEmoticons() {
 //============================================//
 //This function loads all preview images/content
 
-function generatePreviews() {
-	var mainImages = images.findIndex((image) => image.categoryMain); //shortcut for if statements, 
-	var subImages = images.findIndex((image) => image.categorySub); //shortcut derived from following: https://stackoverflow.com/questions/8313350/javascript-indexof-on-an-array-of-objects
-	
-	var mainPage = document.getElementById('main');
-	var pageH1 = document.createElement('h1');
-	var pageH1Text;
-	
+function detectPage() {
 	var design = document.getElementById('design');
 	var illustration = document.getElementById('illustration');
 	var webdev = document.getElementById('webdev');
@@ -239,55 +232,56 @@ function generatePreviews() {
 	if (design !== null){
 		console.log('you are in the Design page!');
 	}else if (illustration !== null){
-		console.log('you are in the Illustration page!');
-		
+		var mainPage = document.getElementById('main');
+		var pageH1 = document.createElement('h1');
+		var pageH1Text;
 		pageH1text = document.createTextNode('Illustration');
 		pageH1.appendChild(pageH1text);
+		var newH2 = document.createElement('h2');
+		var newH2Text = document.createTextNode('Concept Art');
+		newH2.appendChild(newH2Text);
 		mainPage.appendChild(pageH1);
-		
-			if((mainImages === 'Concept Art') > -1){
-				console.log("I'm returning true!");
-				var newArticle = document.createElement('article');
-				var newDiv = document.createElement('div');
-				newDiv.className = 'flex-headings';
-				var newH2 = document.createElement('h2');
-				var newH2Text = document.createTextNode('Concept Art');
-				
-				newH2.appendChild(newH2Text);
-				newDiv.appendChild(newH2);
-				newArticle.appendChild(newDiv);
-				mainPage.appendChild(newArticle);
-				
-				if((subImages === 'Colors: The Tuskegee Studies') > -1){
-					console.log("I'm also returning true");
-					var newH4 = document.createElement('h4');
-					var newH4Text = document.createTextNode('Colors: The Tuskegee Studies');
-					newH4.appendChild(newH4Text);
-					newDiv.appendChild(newH4);
-						
-						for(var i=0; i<images.length; ++i){
-							var newFigure = document.createElement('figure');
-							
-							var newFigcaption = document.createElement('figcaption');
-							var newFigcaptionText = images[i].description;
-							newFigcaption.className = 'not-mobile';
-							newFigcaption.innerHTML = newFigcaptionText;
-
-							var newImg = document.createElement('img');
-							newImg.className = 'preview-link';
-							newImg.src = images[i].preview;
-							newFigure.appendChild(newImg);
-							newFigure.id = images[i].name;
-						
-							newFigure.addEventListener('click', openImageBox);
-							newFigure.appendChild(newFigcaption);
-							newArticle.appendChild(newFigure); 
-						}
-				}
-		}	
+		mainPage.appendChild(newH2);
+		generatePreviews('Colors: The Tuskegee Studies', images);
 	}else if (webdev !== null){
 		console.log('you are in the Web Development page!');
 	}else{
 		console.log ('this is not a page with generation');
 	}
+}
+
+//============================================//
+//This function detects which page you are on.
+
+function generatePreviews(name, arr) {
+	var mainPage = document.getElementById('main');
+	
+	var newArticle = document.createElement('article');
+	mainPage.appendChild(newArticle);
+	var newDiv = document.createElement('div');
+	newDiv.className = 'flex-images';
+	
+	var newH4 = document.createElement('h4');
+	var newH4Text = document.createTextNode(name);
+	newH4.appendChild(newH4Text);
+	newArticle.appendChild(newH4);
+	newArticle.appendChild(newDiv);
+						
+		for(var i=0; i<images.length; ++i){
+			var newFigure = document.createElement('figure');
+			var newFigcaption = document.createElement('figcaption');
+			var newFigcaptionText = images[i].description;
+			newFigcaption.className = 'not-mobile';
+			newFigcaption.innerHTML = newFigcaptionText;
+
+			var newImg = document.createElement('img');
+			newImg.className = 'preview-link';
+			newImg.src = images[i].preview;
+			newFigure.appendChild(newImg);
+			newFigure.id = images[i].name;
+						
+			newFigure.addEventListener('click', openImageBox);
+			newFigure.appendChild(newFigcaption);
+			newDiv.appendChild(newFigure); 
+		}
 }
