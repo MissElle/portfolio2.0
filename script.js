@@ -627,6 +627,8 @@ function generateImgPreviews(name, array) {
 				newFigure.className = array[i].arrayName;
 
 				newFigure.addEventListener('click', openImageBox);
+				newFigcaption.addEventListener('load', isMobile);
+				
 				newFigure.appendChild(newFigcaption);
 				newDiv.appendChild(newFigure); 
 				}
