@@ -17,14 +17,14 @@ var images = [
 	'source' : 'images/illustration-colors-peter-buxton.jpg',
 	'sourceSmall' : 'images/illustration-colors-peter-buxton-400.jpg',
 	'preview' : 'images/illustration-colors-peter-buxton-preview.jpg',
-	'date' : 20161203,
+	'date' : 20161207,
 	'description' : '<h1>Peter Buxton</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Based upon the true Peter Buxton who helped take down one of the most racist "studies" conducted under the name of medicine.</p>'},
 	{'name' : 'illustration-colors-claire-newman',
 	'category' : 'Colors: The Tuskegee Studies',
 	'source' : 'images/illustration-colors-claire-newman.jpg',
 	'sourceSmall' : 'images/illustration-colors-claire-newman-400.jpg',
 	'preview' : 'images/illustration-colors-claire-newman-preview.jpg',
-	'date' : 20161204,
+	'date' : 20161206,
 	'description' : '<h1>Claire Newman</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Main character Claire Newman is a slacktivist who went against her father&#39;s and moved to Tuskegee, Alabama with nothing but a nursing degree and free time. However, something is going on in Tuskegee that&#39;s not quite right. Interviewing the people in the area, the truth unravels.</p>'},
 	{'name' : 'illustration-colors-clementine-turner',
 	'category' : 'Colors: The Tuskegee Studies',
@@ -38,14 +38,14 @@ var images = [
 	'source' : 'images/illustration-colors-eunice-rivers.jpg',
 	'sourceSmall' : 'images/illustration-colors-eunice-rivers-400.jpg',
 	'preview' : 'images/illustration-colors-eunice-rivers-preview.jpg',
-	'date' : 20161206,
+	'date' : 20161204,
 	'description' : '<h1>Eunice Rivers</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Eunice Rivers is based on real person Eunice Rivers, who helped to conduct the Tuskegee Studies for nearly 50 years. This game will explore her character in ways other media have not yet explored, hopefully to answer the question, how can someone not see blatant racism in front of them?</p>'},
 	{'name' : 'illustration-colors-al',
 	'category' : 'Colors: The Tuskegee Studies',
 	'source' : 'images/illustration-colors-al.jpg',
 	'sourceSmall' : 'images/illustration-colors-al-400.jpg',
 	'preview' : 'images/illustration-colors-al-preview.jpg',
-	 'date' : 20161207,
+	 'date' : 20161203,
 	'description' : '<h1>Subject Al</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Fictional character Al is an untreated syphilis patient who is discovered by Claire while she is on drugs. While Claire tries to get him treatment, the hosptial refuses.</p>'},
 	{'name' : 'illustration-mi-bhickie',
 	'category' : 'My oh M.I.',
@@ -283,16 +283,10 @@ function loadEmoticons() {
 }
 
 //============================================//
-//This function will sort the array by date
+//This function will sort the array by date, newest first
 
 function sortNumber(a, b) {
-	return a-b;
-}
-
-function sortArray() {
-	for (var date in images){
-		images.sort(sortNumber);
-	}
+	return b.date-a.date;
 }
 
 //============================================//
@@ -302,6 +296,8 @@ function detectPage() {
 	var design = document.getElementById('design');
 	var illustration = document.getElementById('illustration');
 	var webdev = document.getElementById('webdev');
+	
+	images.sort(sortNumber);
 	
 	if (design !== null){
 		console.log('you are in the Design page!');
