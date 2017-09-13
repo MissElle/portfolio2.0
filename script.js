@@ -115,9 +115,10 @@ function detectAspectRatio() {
 	var para = changeoutText.querySelector('p');
 	
 	var windowRatio = docWidth/docHeight;
+	var windowRatioModified = windowRatio - .33;
 	var imageRatio = imgWidth/imgHeight;
 	
-	if(windowRatio >= imageRatio) {
+	if(windowRatioModified >= imageRatio) {
 		imageSide.style.height = '100%';
 		imageSide.style.width = '70%';
 		descriptionSide.style.width = '30%';
@@ -132,6 +133,7 @@ function detectAspectRatio() {
 		changeoutText.style.textAlign = 'left';
 		para.style.textAlign = 'left';
 	}
+	console.log(windowRatio + ' ' + imageRatio);
 }
 
 //============================================//
