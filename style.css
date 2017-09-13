@@ -124,7 +124,7 @@ body {
 
 #artist-name {display: flex; flex-flow: row nowrap;}
 
-#emoticon-swap {min-width: 3.5em;}
+#emoticon-swap {min-width: 5.4em;}
 
 header{
 	width: 100%;
@@ -511,9 +511,7 @@ figure:hover figcaption.not-mobile {
 		margin: 0;
 	}
 	figcaption.mobile {
-		width: 100%;
-		max-width: 100%;
-		min-width: 100%;
+		width: 100vw;
 	}
 }
 
