@@ -384,28 +384,27 @@ article p, figure {padding: 0 .5em .5em .5em;}
 #main>h1 {
 	padding: .3em 0;
 	font-size: 2.4em;
-	padding-left: 2em;
+	text-indent: 1em;
 }
 
 #main>h2 {
 	font-size: 2em;
-	padding-left: 3em;
+	text-indent: 2em;
 }
 
-#main>article>h2{
+article>h2{
 	font-size: 2em;
-	text-align: center;
+	text-indent: 2em;
 }
 
 #main>h3 {
 	font-size: 3em;
-	padding-left: 3em;
-	text-align: center;
+	text-indent: 4em;
 }
 
 h4{
 	font-size: 3em;
-	text-align: center;
+	text-indent: 4em;
 }
 
 footer h1, footer h2, footer h3, footer h4 {margin: 1em 0;}
@@ -416,6 +415,22 @@ article p {
 	white-space: pre-line;
 	font-size: 1.2em;
 	text-align: justify;
+}
+
+h2.about {
+	padding-left: 0em;
+	padding: .37em 0;
+	margin: 0;
+	text-align: left;
+	text-indent: 0;
+}
+
+h4.about {
+	padding-left: 0em;
+	padding: 0em;
+	margin: 0;
+	text-align: left;
+	text-indent: 0;
 }
 
 h1 {font-size: 1.8em;}
