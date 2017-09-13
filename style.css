@@ -491,11 +491,6 @@ figcaption.mobile {
 	overflow: hidden;
 }
 
-figure:hover>figcaption.mobile {
-	transition: opacity .3s ease-out;
-	opacity: .3;
-}
-
 figcaption.mobile:before {
 	content: '';
 	width: 100%;
