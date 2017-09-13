@@ -335,15 +335,15 @@ var webLinks = [
 	{'name' : 'website-magic-8-ball',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-magic-8-ball.jpg',
-	'date' : 20170420,
-	'hyperlink' : 'https://misselle.github.io/number-or-string/',
-	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'},
+	'date' : 20170411,
+	'hyperlink' : 'https://misselle.github.io/8-ball/',
+	'description' : '<h1>Sarcastic 8-Ball</h1><h3>Array Generation Test</h3><p>April 2017</p><p>Test to use minimal amount of imagery for maximum design. Only "8" is an image. 8-Ball will give sarcastic responses to questions as well as specific answers to specific questions.</p>'},
 	{'name' : 'website-calculator-animation',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-calculator-animation.jpg',
-	'date' : 20170411,
-	'hyperlink' : 'https://misselle.github.io/8-ball/',
-	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'}
+	'date' : 20170420,
+	'hyperlink' : 'https://misselle.github.io/number-or-string/',
+	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>April 2017</p><p>Assignment for Certificate. Developed a jQuery function to detect if an input was a number or a string, collect that data, and count the instances of words used. Played with bitmap animations and compositions of inputted elements.</p>'}
 ];
 
 var brokenLink = {
