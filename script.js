@@ -123,7 +123,63 @@ var images = [
 	'sourceSmall' : 'images/illustration-album-cover-3-400.jpg',
 	'preview' : 'images/illustration-album-cover-3-preview.jpg',
 	'date' : 20170123,
-	'description' : '<h1>Album Concept Three</h1><h3>Album Cover: Wasting Time</h3><p>January 2017</p><p>Project for an independent artist&#39; first solo album. The idea behind this album art was the effect that drugs and other poor choices have on one&#39;s life and time. Essentially, that these activities waste one&#39;s time and that it cannot be recovered. Concept Three.</p>'}
+	'description' : '<h1>Album Concept Three</h1><h3>Album Cover: Wasting Time</h3><p>January 2017</p><p>Project for an independent artist&#39; first solo album. The idea behind this album art was the effect that drugs and other poor choices have on one&#39;s life and time. Essentially, that these activities waste one&#39;s time and that it cannot be recovered. Concept Three.</p>'},
+	{'name' : 'design-uihi-award-art-mart',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-award-art-mart.png',
+	'sourceSmall' : 'images/design-uihi-award-art-mart-400.png',
+	'preview' : 'images/design-uihi-award-art-mart-preview.jpg',
+	'date' : 20170624,
+	'description' : '<h1>SpiritWalk Certificates</h1><h3>Art Mart 1st Place</h3><p>June 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to a vendor at Art Mart, picked by a panel of judges</p>'},
+	{'name' : 'design-uihi-award-grandma-helen',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-award-grandma-helen.png',
+	'sourceSmall' : 'images/design-uihi-award-grandma-helen-400.png',
+	'preview' : 'images/design-uihi-award-grandma-helen-preview.jpg',
+	'date' : 20170625,
+	'description' : '<h1>SpiritWalk Certificates</h1><h3>Grandma Helen Award</h3><p>June 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to several SpirtWalk participants that were over the age of 65 and completed the walk cycle.</p><p>The photo was not taken by the artist. It is property of <a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
+	{'name' : 'design-uihi-award-most-money-solo',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-award-most-money-solo.png',
+	'sourceSmall' : 'images/design-uihi-award-most-money-solo-400.png',
+	'preview' : 'images/design-uihi-award-most-money-solo-preview.jpg',
+	'date' : 20170624,
+	'description' : '<h1>SpiritWalk Certificates</h1><h3>Most Money Raised - Individual</h3><p>June 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to an individual who collected the most money per mile walked for the SpiritWalk route.</p>'},
+	{'name' : 'design-uihi-award-most-money-group',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-award-most-money-group.png',
+	'sourceSmall' : 'images/design-uihi-award-most-money-group-400.png',
+	'preview' : 'images/design-uihi-award-most-money-group-preview.jpg',
+	'date' : 20170624,
+	'description' : '<h1>SpiritWalk Certificates</h1><h3>Most Money Raised - Group</h3><p>June 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to a group of participants who collected the most money per mile walked for the SpiritWalk route.</p><p>The frog design was not created by the artist. It is property of <a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
+	{'name' : 'design-uihi-PrEP-Postcard-v1-Page-1',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-PrEP-Postcard-v1-Page-1.jpg',
+	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v1-Page-1-400.jpg',
+	'preview' : 'images/design-uihi-PrEP-Postcard-v1-Page-1-preview.jpg',
+	'date' : 20170828,
+	'description' : '<h1>PrEP Postcard</h1><h3>Version One - Side Two</h3><p>August 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the first version of side two and it will not be published.</p>'},
+	{'name' : 'design-uihi-PrEP-Postcard-v1-Page-2',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-PrEP-Postcard-v1-Page-2.jpg',
+	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v1-Page-2-400.jpg',
+	'preview' : 'images/design-uihi-PrEP-Postcard-v1-Page-2-preview.jpg',
+	'date' : 20170829,
+	'description' : '<h1>PrEP Postcard</h1><h3>Version One - Side One</h3><p>August 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the first version of side one and it will not be published. The logos were not created by the artist and are property of <a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
+	{'name' : 'design-uihi-PrEP-Postcard-v2-Page-2',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-PrEP-Postcard-v2-Page-2.jpg',
+	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v2-Page-2-400.jpg',
+	'preview' : 'images/design-uihi-PrEP-Postcard-v2-Page-2-preview.jpg',
+	'date' : 20170831,
+	'description' : '<h1>PrEP Postcard</h1><h3>Final Version - Side One</h3><p>August 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the final version that will be printed and published online. The logos and photo were not created by the artist and are property of <a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
+	{'name' : 'design-uihi-PrEP-Postcard-v2-Page-1',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-uihi-PrEP-Postcard-v2-Page-1.jpg',
+	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v2-Page-1-400.jpg',
+	'preview' : 'images/design-uihi-PrEP-Postcard-v2-Page-1-preview.jpg',
+	'date' : 20170830,
+	'description' : '<h1>PrEP Postcard</h1><h3>Final Version - Side Two</h3><p>August 2017</p><p><a href="www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the final version that will be printed and published online.</p>'}
 ];
 
 var brokenLink = {
@@ -334,8 +390,28 @@ function detectPage() {
 	
 	images.sort(sortNumber);
 	
-	if (design !== null){
-		console.log('you are in the Design page!');
+	if(design !== null){
+		var mainPage = document.getElementById('main');
+		var pageH1 = document.createElement('h1');
+		var pageH1Text;
+		pageH1text = document.createTextNode('Design');
+		pageH1.appendChild(pageH1text);
+		mainPage.appendChild(pageH1);
+		
+		var newH2 = document.createElement('h2');
+		var newH2Text = document.createTextNode('Composition and Layout');
+		newH2.appendChild(newH2Text);
+		mainPage.appendChild(newH2);
+		generateImgPreviews('Design and Composition', images);
+		generateImgPreviews('Layout Only', images);
+		
+		newH2 = document.createElement('h2');
+		newH2Text = document.createTextNode('Iconography');
+		newH2.appendChild(newH2Text);
+		mainPage.appendChild(newH2);
+		generateImgPreviews('2017 Pride', images);
+		generateImgPreviews('12 Logos, 48 Hours', images);
+		
 	}else if (illustration !== null){
 		var mainPage = document.getElementById('main');
 		var pageH1 = document.createElement('h1');
@@ -344,14 +420,14 @@ function detectPage() {
 		pageH1.appendChild(pageH1text);
 		mainPage.appendChild(pageH1);
 		
-		newH2 = document.createElement('h2');
-		newH2Text = document.createTextNode('Sketchbook');
+		var newH2 = document.createElement('h2');
+		var newH2Text = document.createTextNode('Sketchbook');
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(newH2);
 		generateImgPreviews('Doodles', images);
 		
-		var newH2 = document.createElement('h2');
-		var newH2Text = document.createTextNode('Concept Art');
+		newH2 = document.createElement('h2');
+		newH2Text = document.createTextNode('Concept Art');
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(newH2);
 		generateImgPreviews('Album: Wasting Time', images);
