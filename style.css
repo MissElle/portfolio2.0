@@ -477,7 +477,7 @@ div.flex-images>a {
 
 figcaption.mobile {
 	vertical-align: top;
-	background-color: #10002d;
+	background-color: #d5d5e0;
 	height: 10em;
 	min-height: 
 	max-height: 10em;
@@ -487,7 +487,7 @@ figcaption.mobile {
 	-moz-box-shadow: inset 0 0 1em #ffffff;
   -webkit-box-shadow: inset 0 0 1em #ffffff;
   box-shadow: inset 0 0 1em #ffffff;
-	color: #ffffff;
+	color: #000000;
 	overflow: hidden;
 }
 
@@ -540,6 +540,7 @@ figure:hover figcaption.not-mobile {
 	}
 	figcaption.mobile {
 		width: 100vw;
+		box-shadow: none;
 	}
 	div.flex-images>a{width: 100%;}
 	.preview-link {object-position: top center;}
