@@ -123,18 +123,14 @@ function detectAspectRatio() {
 		descriptionSide.style.width = '30%';
 		descriptionSide.style.height = '100%';
 		changeoutText.style.textAlign = 'right';
-		for(var i=0; i<para.length; ++i){
-			para[i].style.textAlign = 'right';
-		}
+		para.style.textAlign = 'right';
 	}else {
 		imageSide.style.height = '70%';
 		imageSide.style.width = '100%';
 		descriptionSide.style.width ='100%';
 		descriptionSide.style.height = '30%';
 		changeoutText.style.textAlign = 'left';
-		for(var i=0; i<para.length; ++i){
-			para[i].style.textAlign = 'left';
-		}
+		para.style.textAlign = 'left';
 	}
 }
 
@@ -352,7 +348,6 @@ function generateWebPreviews(name, array) {
 				newFigure.appendChild(newFigcaption);
 				newLink.appendChild(newFigure);
 				newDiv.appendChild(newLink); 
-//				newDiv.appendChild(newFigure);
 		}
 	}
 }
@@ -387,7 +382,7 @@ var images = [
 	'sourceSmall' : 'images/illustration-colors-clementine-turner-400.jpg',
 	'preview' : 'images/illustration-colors-clementine-turner-preview.jpg',
 	'date' : 20161205,
-	'description' : '<h1>Clementine Turner</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Supporting character Clementine Turner is Claire&#39;s aunt and only point of contact in Tuskegee. Holding a grudge against her brother, Claire&#39;s father, she lets Claire move from San Francisco to live with her in Tuskegee. Behind her bitterness, there is history or pain, racism, abandonement, and an understanding of how people behave.</p>'},
+	'description' : '<h1>Clementine Turner</h1><h3>Colors: The Tuskegee Studies</h3><p>December 2016</p><p>A video game thit is also a piece of historical fiction, Colors: The Tuskegee Studies takes a "clear" look into a darker side of America&#39;s history. Supporting character Clementine Turner is Claire&#39;s aunt and only point of contact in Tuskegee. Holding a grudge against her brother, Claire&#39;s father, she lets Claire move from San Francisco to live with her in Tuskegee. Behind her bitterness, there is history of pain, racism, abandonement, and an understanding of how people behave.</p>'},
 	{'name' : 'illustration-colors-eunice-rivers',
 	'category' : 'Colors: The Tuskegee Studies',
 	'source' : 'images/illustration-colors-eunice-rivers.jpg',
