@@ -329,6 +329,17 @@ var images = [
 	'description' : '<h1>UIHI Infographics</h1><h3>Tuberculosis Screening</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'}
 ];
 
+//This array is for webLinks and previews, since function is much different than images
+
+var webLinks = [
+	{'name' : 'website-calculator-animation',
+	'category' : 'Javascript and JQuery',
+	'preview' : 'images/website-calculator-animation.jpg',
+	'date' : 20170420,
+	'hyperlink' : 'https://misselle.github.io/number-or-string/',
+	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'}
+];
+
 var brokenLink = {
 	'source' : 'images/shrug.svg',
 	'description' : '<h2>Uh Oh!<br> A Broken Link!</h2> <br><p>It looks like the artist programmed this site wrong! Silly Artist, thinking she&#39;s a programmer...</p>'
@@ -531,6 +542,7 @@ function detectPage() {
 	var webdev = document.getElementById('webdev');
 	
 	images.sort(sortNumber);
+	webLinks.sort(sortNumber);
 	
 	if(design !== null){
 		var mainPage = document.getElementById('main');
@@ -590,9 +602,9 @@ function detectPage() {
 		mainPage.appendChild(pageH1);
 		
 	
-		generateWebPreviews('Javascript and JQuery', images);
+		generateWebPreviews('Javascript and JQuery', webLinks);
 
-		generateWebPreviews('HTML5 and CSS3', images);
+		generateWebPreviews('HTML5 and CSS3', webLinks);
 
 	}else{
 		console.log ('Hello Web Developer :) ');
@@ -657,10 +669,11 @@ function generateWebPreviews(name, array) {
 	newArticle.appendChild(newDiv);
 						
 		for(var i=0; i<array.length; ++i){
-			var imageCategory = images[i].category;
+			var imageCategory = webLinks[i].category;
 			if(imageCategory.match(name)){
 				var newLink = document.createElement('a');
 				newLink.href = array[i].hyperlink;
+				newLink.target = '_blank'
 				var newFigure = document.createElement('figure');
 				var newFigcaption = document.createElement('figcaption');
 				var newFigcaptionText = array[i].description;
@@ -672,6 +685,8 @@ function generateWebPreviews(name, array) {
 				newFigure.appendChild(newImg);
 				newFigure.id = array[i].name;
 
+				isMobile(newFigure, newFigcaption);
+				
 				newFigure.appendChild(newFigcaption);
 				newLink.appendChild(newFigure);
 				newDiv.appendChild(newLink); 
