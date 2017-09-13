@@ -339,7 +339,6 @@ var brokenLink = {
 
 window.addEventListener('scroll', stickyHeader);
 document.getElementById('hamburger').addEventListener('click', menuFunctions);
-window.addEventListener('load', isMobile);
 window.addEventListener('load', loadEmoticons);
 document.getElementById('changeout-image').addEventListener('load', detectAspectRatio);
 window.addEventListener('resize', detectAspectRatio);
@@ -413,29 +412,14 @@ function resetClickEvent() {
 //============================================//
 //This detects if the device is mobile and changes the handling of figcaptions
 
-//function isMobile() {
-//	var figcaptions = document.getElementsByTagName('figcaption');
-//	var figures = document.getElementsByTagName('figure');
-//	
-//	for(var i=0; i<figcaptions.length; ++i) {
-//		if(/iPhone|iPad|iPod|Android| Blackberry|Opera Mini|IEMobile/i.test(navigator.userAgent)){
-//			figures[i].style.height = '21em';
-//			figcaptions[i].className = 'mobile';
-//		}else {
-//			figures[i].style.height = '15em';
-//			figcaptions[i].className = 'not-mobile';
-//		}
-//	}
-//}
-
-function isMobile(el) {
+function isMobile(a, b) {
 
 	if(/iPhone|iPad|iPod|Android| Blackberry|Opera Mini|IEMobile/i.test(navigator.userAgent)){
-		el.style.height = '21em';
-		el.className = 'mobile';
+		a.style.height = '22em';
+		b.className = 'mobile';
 	}else {
-		el.style.height = '15em';
-		el.className = 'not-mobile';
+		a.style.height = '15em';
+		b.className = 'not-mobile';
 	}
 }
 
@@ -635,10 +619,9 @@ function generateImgPreviews(name, array) {
 				newImg.src = array[i].preview;
 				newFigure.appendChild(newImg);
 				newFigure.id = array[i].name;
-				newFigure.className = array[i].arrayName;
 
 				newFigure.addEventListener('click', openImageBox);
-				isMobile(newFigcaption);
+				isMobile(newFigure, newFigcaption);
 				
 				newFigure.appendChild(newFigcaption);
 				newDiv.appendChild(newFigure); 
