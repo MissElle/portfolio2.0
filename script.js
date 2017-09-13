@@ -332,11 +332,17 @@ var images = [
 //This array is for webLinks and previews, since function is much different than images
 
 var webLinks = [
+	{'name' : 'website-magic-8-ball',
+	'category' : 'Javascript and JQuery',
+	'preview' : 'images/website-magic-8-ball.jpg',
+	'date' : 20170420,
+	'hyperlink' : 'https://misselle.github.io/number-or-string/',
+	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'},
 	{'name' : 'website-calculator-animation',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-calculator-animation.jpg',
-	'date' : 20170420,
-	'hyperlink' : 'https://misselle.github.io/number-or-string/',
+	'date' : 20170411,
+	'hyperlink' : 'https://misselle.github.io/8-ball/',
 	'description' : '<h1>Detect Words or Numbers</h1><h3>Bitmap Animation Test</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'}
 ];
 
@@ -690,6 +696,7 @@ function generateWebPreviews(name, array) {
 				newFigure.appendChild(newFigcaption);
 				newLink.appendChild(newFigure);
 				newDiv.appendChild(newLink); 
+//				newDiv.appendChild(newFigure);
 		}
 	}
 }
