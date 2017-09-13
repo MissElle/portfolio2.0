@@ -88,7 +88,42 @@ var images = [
 	'sourceSmall' : 'images/illustration-doodle-bad-dreams-400.jpg',
 	'preview' : 'images/illustration-doodle-bad-dreams-preview.jpg',
 	'date' : 20170501,
-	'description' : '<h1>Bad Dreams</h1><h3>Doodles</h3><p>May 2017</p><p>Study playing with wet vs dry brushing. Representation of Lucidity.</p>'}
+	'description' : '<h1>Bad Dreams</h1><h3>Doodles</h3><p>May 2017</p><p>Study playing with wet vs dry brushing. Representation of Lucidity.</p>'},
+	{'name' : 'illustration-doodle-fairy',
+	'category' : 'Doodles',
+	'source' : 'images/illustration-doodle-fairy.jpg',
+	'sourceSmall' : 'images/illustration-doodle-fairy-400.jpg',
+	'preview' : 'images/illustration-doodle-fairy-preview.jpg',
+	'date' : 20170808,
+	'description' : '<h1>Wormwood Fairy</h1><h3>Doodles</h3><p>August 2017</p><p>Concept Art Sketch for a friend&#39;s costume idea. This fairy is fond of Wormwood drinks and even has Wormwood leaves for wings.</p>'},
+	{'name' : 'illustration-doodle-baby-hair',
+	'category' : 'Doodles',
+	'source' : 'images/illustration-doodle-baby-hair.jpg',
+	'sourceSmall' : 'images/illustration-doodle-baby-hair-400.jpg',
+	'preview' : 'images/illustration-doodle-baby-hair-preview.jpg',
+	'date' : 20170422,
+	'description' : '<h1>Baby Hair</h1><h3>Doodles</h3><p>April 2017</p><p>Study playing with different types of ink, sesitivity, pressure, and surreal subject matter. Shapes pulled from a rose.</p>'},
+	{'name' : 'illustration-album-cover-1',
+	'category' : 'Album: Wasting Time',
+	'source' : 'images/illustration-album-cover-1.jpg',
+	'sourceSmall' : 'images/illustration-album-cover-1-400.jpg',
+	'preview' : 'images/illustration-album-cover-1-preview.jpg',
+	'date' : 20170125,
+	'description' : '<h1>Album Concept One</h1><h3>Album Cover: Wasting Time</h3><p>January 2017</p><p>Project for an independent artist&#39; first solo album. The idea behind this album art was the effect that drugs and other poor choices have on one&#39;s life and time. Essentially, that these activities waste one&#39;s time and that it cannot be recovered. Concept One.</p>'},
+	{'name' : 'illustration-album-cover-2',
+	'category' : 'Album: Wasting Time',
+	'source' : 'images/illustration-album-cover-2.jpg',
+	'sourceSmall' : 'images/illustration-album-cover-2-400.jpg',
+	'preview' : 'images/illustration-album-cover-2-preview.jpg',
+	'date' : 20170124,
+	'description' : '<h1>Album Concept Two</h1><h3>Album Cover: Wasting Time</h3><p>January 2017</p><p>Project for an independent artist&#39; first solo album. The idea behind this album art was the effect that drugs and other poor choices have on one&#39;s life and time. Essentially, that these activities waste one&#39;s time and that it cannot be recovered. Concept Two.</p>'},
+	{'name' : 'illustration-album-cover-3',
+	'category' : 'Album: Wasting Time',
+	'source' : 'images/illustration-album-cover-3.jpg',
+	'sourceSmall' : 'images/illustration-album-cover-3-400.jpg',
+	'preview' : 'images/illustration-album-cover-3-preview.jpg',
+	'date' : 20170123,
+	'description' : '<h1>Album Concept Three</h1><h3>Album Cover: Wasting Time</h3><p>January 2017</p><p>Project for an independent artist&#39; first solo album. The idea behind this album art was the effect that drugs and other poor choices have on one&#39;s life and time. Essentially, that these activities waste one&#39;s time and that it cannot be recovered. Concept Three.</p>'}
 ];
 
 var brokenLink = {
@@ -319,6 +354,7 @@ function detectPage() {
 		var newH2Text = document.createTextNode('Concept Art');
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(newH2);
+		generateImgPreviews('Album: Wasting Time', images);
 		generateImgPreviews('Colors: The Tuskegee Studies', images);
 		
 		newH2 = document.createElement('h2');
