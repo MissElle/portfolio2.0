@@ -7,7 +7,7 @@ var previousScroll = 0; //This updates after every scroll to afix the header onl
 
 var clickEvent = false; //This will determine if the menu should be opened or closed
 
-//This is image data that will be pulled to fill in the image pop-up box
+//This is image data that will be pulled to fill in the image pop-up box or previews
 
 var emoticons = ['¯\_(ツ)_/¯', 'O_O', '◉_◉', 'ಠ_ಠ', '^_^', '=^.^=', '•ﺑ•', '◕ω◕', '｡◕ ‿ ◕｡', '(¬‿¬)', '(°ℇ °)', '^ㅂ^', '(;¬_¬)', 'ޏ(ὸ.ό)ރ'];
 
@@ -582,9 +582,20 @@ function detectPage() {
 		generateImgPreviews('My oh M.I.', images);
 		
 	}else if (webdev !== null){
-		console.log('you are in the Web Development page!');
+		var mainPage = document.getElementById('main');
+		var pageH1 = document.createElement('h1');
+		var pageH1Text;
+		pageH1text = document.createTextNode('Web Development');
+		pageH1.appendChild(pageH1text);
+		mainPage.appendChild(pageH1);
+		
+	
+		generateWebPreviews('Javascript and JQuery', images);
+
+		generateWebPreviews('HTML5 and CSS3', images);
+
 	}else{
-		console.log ('this is not a page with generation');
+		console.log ('Hello Web Developer :) ');
 	}
 }
 
@@ -611,7 +622,6 @@ function generateImgPreviews(name, array) {
 				var newFigure = document.createElement('figure');
 				var newFigcaption = document.createElement('figcaption');
 				var newFigcaptionText = array[i].description;
-				newFigcaption.className = 'not-mobile';
 				newFigcaption.innerHTML = newFigcaptionText;
 
 				var newImg = document.createElement('img');
@@ -640,29 +650,31 @@ function generateWebPreviews(name, array) {
 	var newDiv = document.createElement('div');
 	newDiv.className = 'flex-images';
 	
-	var newH4 = document.createElement('h4');
-	var newH4Text = document.createTextNode(name);
-	newH4.appendChild(newH4Text);
-	newArticle.appendChild(newH4);
+	var newH2 = document.createElement('h2');
+	var newH2Text = document.createTextNode(name);
+	newH2.appendChild(newH2Text);
+	newArticle.appendChild(newH2);
 	newArticle.appendChild(newDiv);
 						
 		for(var i=0; i<array.length; ++i){
-			var newLink = document.createElement('a');
-			newLink.href = array[i].hyperlink;
-			var newFigure = document.createElement('figure');
-			var newFigcaption = document.createElement('figcaption');
-			var newFigcaptionText = array[i].description;
-			newFigcaption.className = 'not-mobile';
-			newFigcaption.innerHTML = newFigcaptionText;
+			var imageCategory = images[i].category;
+			if(imageCategory.match(name)){
+				var newLink = document.createElement('a');
+				newLink.href = array[i].hyperlink;
+				var newFigure = document.createElement('figure');
+				var newFigcaption = document.createElement('figcaption');
+				var newFigcaptionText = array[i].description;
+				newFigcaption.innerHTML = newFigcaptionText;
 
-			var newImg = document.createElement('img');
-			newImg.className = 'preview-link';
-			newImg.src = array[i].preview;
-			newFigure.appendChild(newImg);
-			newFigure.id = array[i].name;
-			
-			newFigure.appendChild(newFigcaption);
-			newLink.appendChild(newFigure);
-			newDiv.appendChild(newLink); 
+				var newImg = document.createElement('img');
+				newImg.className = 'preview-link';
+				newImg.src = array[i].preview;
+				newFigure.appendChild(newImg);
+				newFigure.id = array[i].name;
+
+				newFigure.appendChild(newFigcaption);
+				newLink.appendChild(newFigure);
+				newDiv.appendChild(newLink); 
 		}
+	}
 }
