@@ -187,13 +187,20 @@ var images = [
 	'preview' : 'images/design-uihi-PrEP-Postcard-v2-Page-2-preview.jpg',
 	'date' : 20170831,
 	'description' : '<h1>PrEP Postcard</h1><h3>Final Version - Side One</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the final version that will be printed and published online. The logos and photo were not created by the artist and are property of <a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
-	{'name' : 'design-uihi-PrEP-Postcard-v2-Page-1',
+	{'name' : 'design-uihi-about-banner',
 	'category' : 'Layout Only',
-	'source' : 'images/design-uihi-PrEP-Postcard-v2-Page-1.jpg',
-	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v2-Page-1-400.jpg',
-	'preview' : 'images/design-uihi-PrEP-Postcard-v2-Page-1-preview.jpg',
-	'date' : 20170830,
-	'description' : '<h1>PrEP Postcard</h1><h3>Final Version - Side Two</h3><p>August 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the final version that will be printed and published online.</p>'}
+	'source' : 'images/design-uihi-about-banner.jpg',
+	'sourceSmall' : 'images/design-uihi-about-banner-400.jpg',
+	'preview' : 'images/design-uihi-about-banner-preview.jpg',
+	'date' : 20170720,
+	'description' : '<h1>UIHI Banner</h1><h3>About Page Banner</h3><p>July 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#9;s <a href="http://www.uihi.org/about/ target="_blank">about</a> section needed an updated banner that encapsulated all that UIHI does for American Indians and Alaska Natives. The four sections represent the four corners and the four sections of the medicine wheel. The colors of the dividers are the primary UIHI brand colors. From far left clockwise, the images represent family, community outreach, identity, and data collection. All photos are stock photos with the exception of the top photos, which are from previous UIHI conferences.</p>'},
+	{'name' : 'design-uihi-donate-banner',
+	'category' : 'Layout Only',
+	'source' : 'images/design-uihi-donate-banner.jpg',
+	'sourceSmall' : 'images/design-uihi-donate-banner-400.jpg',
+	'preview' : 'images/design-uihi-donate-banner-preview.jpg',
+	'date' : 20170719,
+	'description' : '<h1>UIHI Banner</h1><h3>About Page Banner</h3><p>July 2017</p><p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a donation banner for division <a href="http://http://www.sihb.org/" target="_blank">The Seattle Indian Health Board</a> (SIHB) <a href="http://http://www.sihb.org/get-involved-donate target="_blank">donate</a> section. This donation banner encapsulates the services of SIHB, such as both western and traditional medicine to the Native community and youth services. All images were taken at the SIHB except for the far left, which is a stock image.</p>'}
 ];
 
 var brokenLink = {
