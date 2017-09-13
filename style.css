@@ -20,7 +20,7 @@ html{
 	background: -o-linear-gradient(bottom, #ffffff, #b8c2d6, #10002d 115%);
 	background: -moz-linear-gradient(bottom, #ffffff, #b8c2d6, #10002d 115%);
 	background: linear-gradient(to top, #ffffff, #b8c2d6, #10002d 115%);
-	color: #10002d;
+	color: #272735;
 }
 
 body {
@@ -390,6 +390,11 @@ article p, figure {padding: 0 .5em .5em .5em;}
 #main>h2 {
 	font-size: 2em;
 	padding-left: 3em;
+}
+
+#main>article>h2{
+	font-size: 2em;
+	text-align: center;
 }
 
 #main>h3 {
