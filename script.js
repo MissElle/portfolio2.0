@@ -150,6 +150,20 @@ function detectAspectRatio() {
 function closeImageBox() {
 	var imgBox = document.getElementById('dark-box');
 	imgBox.className = 'fade-out';
+	var footerTag = document.getElementById('footer');
+	var htmlTag = document.getElementById('html');
+	var footerTag = document.getElementById('footer');
+	var htmlTag = document.getElementById('html');
+	var mainDiv = document.getElementById('main');
+	var changeoutText = document.getElementById('changeout-text');
+	var changeoutImage = document.getElementById('changeout-image');
+	
+	
+	changeoutText.innerHTML = '';
+	changeoutImage.src = '';
+	mainDiv.style.pointerEvents = '';
+	footerTag.style.pointerEvents = '';
+	htmlTag.style.overflow = '';
 }
 
 //============================================//
@@ -158,6 +172,9 @@ function closeImageBox() {
 function openImageBox(el) {
 	var imgBox =document.getElementById('dark-box');
 	var elName = this.id;
+	var footerTag = document.getElementById('footer');
+	var htmlTag = document.getElementById('html');
+	var mainDiv = document.getElementById('main');
 	
 	for (var i=0; i<images.length; ++i){
 		var imageName = images[i].name;
@@ -180,6 +197,9 @@ function openImageBox(el) {
 		}
 	}
 	
+	mainDiv.style.pointerEvents = 'none';
+	footerTag.style.pointerEvents = 'none';
+	htmlTag.style.overflow = 'hidden';
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
 }
