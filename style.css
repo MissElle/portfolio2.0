@@ -445,6 +445,8 @@ article p {
 	text-align: justify;
 }
 
+p.about {text-align: left;}
+
 h2.about {
 	padding-left: 0em;
 	padding: .37em 0;
@@ -622,6 +624,7 @@ figure:hover figcaption.not-mobile {
 	.portrait {
 		float: none;
 		width: 100%;
+		max-width: none;
 	}
 }
 
