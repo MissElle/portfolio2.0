@@ -47,17 +47,26 @@ function menuFunctions(){
 	var navUl = document.getElementById('navUl');
 	var hamburger = document.getElementById('hamburger');
 	var menuDivs = hamburger.getElementsByTagName('div');
+	var mainDiv = document.getElementById('main');
+	var footerTag = document.getElementById('footer');
+	var htmlTag = document.getElementById('html');
 	
 	if(clickEvent === false){
 		navMenu.className = 'menuShow';
 		navUl.className = 'ulShow fade-in';
 		hamburger.className = 'clickEvent';
+		mainDiv.style.pointerEvents = 'none';
+		footerTag.style.pointerEvents = 'none';
+		htmlTag.style.overflow = 'hidden';
 		
 		clickEvent = true;
 	} else if (clickEvent === true){
 		navMenu.className='';
 		navUl.className = 'fade-out';
 		hamburger.className = '';
+		mainDiv.style.pointerEvents = '';
+		footerTag.style.pointerEvents = '';
+		htmlTag.style.overflow = '';
 		
 		clickEvent = false;
 	}
