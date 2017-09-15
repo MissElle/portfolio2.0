@@ -487,7 +487,18 @@ figure {
 	padding: 0;
 	margin: auto;
 	cursor: pointer;
-	z-index: 1;
+	z-index: 2;
+	box-shadow: none;
+	-o-box-shadow: none;
+	-mox-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+figure:hover {
+	box-shadow: inset 0 0 1.3em .3em rgba(137, 194, 255, 1);
+	-o-box-shadow: inset 0 0 1.3em .3em rgba(137, 194, 255, 1);
+	-moz-box-shadow: inset 0 0 1.3em .3em rgba(137, 194, 255, 1);
+	-webkit-box-shadow: inset 0 0 1.3em .3em rgba(137, 194, 255, 1);
 }
 
 div.flex-images>a>figure {width: 100%;}
@@ -497,19 +508,22 @@ div.flex-images>a {
 	margin: auto;
 }
 
-.preview-link {
+div.preview-link {
 	width: 100%;
 	height: 15em;
-	object-fit: cover;
-	object-position: center center;
-}
-
-figure img {
+	background-position: center center;
+	background-size: cover;
+	box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
+	-o-box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
+	-moz-box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
+	-webkit-box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
+	display: inline-block;
 	transition: opacity .3s ease-out;
+	opacity: 1;
 }
 
-figure:hover img {
-	opacity: .3;
+figure:hover>div.preview-link {
+	opacity: .2;
 }
 
 figcaption {
@@ -536,12 +550,6 @@ figcaption.not-mobile {
 	font-size: .87em;
 }
 
-/*
-a>figure>figcaption.not-mobile {
-	text-decoration: none;
-}
-*/
-
 div.flex-images>a {
 	text-decoration: none;
 	vertical-align: top;
@@ -557,9 +565,6 @@ figcaption.mobile {
 	font-size: .7em;
 	position: relative;
 	top: -.4em;
-	-moz-box-shadow: inset 0 0 1em #ffffff;
-  -webkit-box-shadow: inset 0 0 1em #ffffff;
-  box-shadow: inset 0 0 1em #ffffff;
 	color: #000000;
 	overflow: hidden;
 }
@@ -608,10 +613,21 @@ figure:hover figcaption.not-mobile {
 	}
 	figcaption.mobile {
 		width: 100vw;
-		box-shadow: none;
 	}
 	div.flex-images>a{width: 100%;}
-	.preview-link {object-position: top center;}
+	div.preview-link {
+		background-position: top center;
+		box-shadow: inset 0 0 1.3em .7em  rgba(255, 255, 255, .9);
+		-o-box-shadow: inset 0 0 1.3em .7em  rgba(255, 255, 255, .9);
+		-moz-box-shadow: inset 0 0 1.3em .7em  rgba(255, 255, 255, .9);
+		-webkit-box-shadow: inset 0 0 1.3em .7em  rgba(255, 255, 255, .9);
+	}
+	figure:hover {
+		box-shadow: inset 0 0 1.3em .7em rgba(137, 194, 255, 1);
+		-o-box-shadow: inset 0 0 1.3em .7em rgba(137, 194, 255, 1);
+		-moz-box-shadow: inset 0 0 1.3em .7em rgba(137, 194, 255, 1);
+		-webkit-box-shadow: inset 0 0 1.3em .7em rgba(137, 194, 255, 1);
+	}
 }
 
 .portrait {
