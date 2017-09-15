@@ -96,7 +96,6 @@ function isMobile(a, b) {
 	}
 }
 
-
 //isMobile() test mostly derived from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 
 //============================================//
@@ -296,9 +295,10 @@ function generateImgPreviews(name, array) {
 				var newFigcaptionText = array[i].description;
 				newFigcaption.innerHTML = newFigcaptionText;
 
-				var newImg = document.createElement('img');
+				var newImg = document.createElement('div');
 				newImg.className = 'preview-link';
-				newImg.src = array[i].preview;
+				newImg.style.backgroundImage = 'url(' + array[i].preview +')';
+		
 				newFigure.appendChild(newImg);
 				newFigure.id = array[i].name;
 
@@ -339,9 +339,9 @@ function generateWebPreviews(name, array) {
 				var newFigcaptionText = array[i].description;
 				newFigcaption.innerHTML = newFigcaptionText;
 
-				var newImg = document.createElement('img');
+				var newImg = document.createElement('div');
 				newImg.className = 'preview-link';
-				newImg.src = array[i].preview;
+				newImg.style.backgroundImage = 'url(' + array[i].preview +')';
 				newFigure.appendChild(newImg);
 				newFigure.id = array[i].name;
 
