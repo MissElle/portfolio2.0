@@ -562,7 +562,7 @@ figcaption.mobile {
 	overflow: hidden;
 }
 
-figcaption.mobile:before {
+figcaption.mobile::before {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -573,7 +573,7 @@ figcaption.mobile:before {
 	background:-webkit-linear-gradient(transparent 6em, rgba(255,255,255,.5), rgba(255,255,255,1) 9.5em);
 }
 
-figcaption.not-mobile:before {
+figcaption.not-mobile::before {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -615,6 +615,7 @@ figure:hover figcaption.not-mobile {
 .portrait {
 	float: right;
 	padding: 1em;
+	max-width: 30em;
 }
 
 @media all and (max-width: 38.125em) {
