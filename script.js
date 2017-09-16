@@ -173,7 +173,7 @@ function openImageBox(el) {
 	var imgBox =document.getElementById('dark-box');
 	var elName = this.id;
 	var footerTag = document.getElementById('footer');
-	vagit r htmlTag = document.getElementById('html');
+	var htmlTag = document.getElementById('html');
 	var mainDiv = document.getElementById('main');
 	
 	for (var i=0; i<images.length; ++i){
