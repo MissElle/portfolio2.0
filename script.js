@@ -18,6 +18,7 @@ window.addEventListener('resize', detectAspectRatio);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
 window.addEventListener('load', detectPage);
+document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
 //This function helps the sticky header scroll foward and hide appropriately
@@ -378,6 +379,24 @@ function generateWebPreviews(name, array) {
 		}
 	}
 }
+
+//============================================//
+//All arrays that hold generated content are here
+
+function formDataConfirm() {
+	var contactMe = document.getElementById('contactMe');
+	var confirmWin = document.getElementById('confirmation-window');
+	
+	confirmWin.className= '';
+	
+	setTimeout(function(){
+		confirmWin.className = 'hide';
+	}, 7000);
+	
+	event.preventDefault();
+	
+}
+
 
 //============================================//
 //All arrays that hold generated content are here
