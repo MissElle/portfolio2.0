@@ -17,12 +17,8 @@ document.getElementById('changeout-image').addEventListener('load', detectAspect
 window.addEventListener('resize', detectAspectRatio);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
-
 window.addEventListener('load', detectPage);
-var figures = document.getElementsByTagName('figure');
-for(var i=0; i<figures.length; ++i){
-	figures[i].addEventListener('click', openImageBox);
-}
+
 //============================================//
 //This function helps the sticky header scroll foward and hide appropriately
 
