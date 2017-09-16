@@ -832,6 +832,31 @@ button:active {
 }
 
 /*============================================*/
+/*stylings for the confirmation window*/
+
+div#confirmation-window {
+	position: fixed;
+	background-color: rgba(255, 255, 255, .8);
+	bottom: 1em;
+	right: 0;
+	width: 100%;
+	max-width: 40em;
+	max-height: 15em;
+	padding: 1em;
+	z-index: 100;
+	transition: all .3s linear;
+	box-shadow: inset 0 0 1.3em .5em rgba(255, 255, 255, 1);
+}
+
+div#confirmation-window>p, div#confirmation-window>h2 {opacity: 1; transition: opacity .6s linear;}
+div#confirmation-window.hide>p, div#confirmation-window.hide>h2 {opacity: 0;}
+
+div#confirmation-window.hide {
+	width: 1em;
+	right: -2em;
+}
+
+/*============================================*/
 /*stylings for fonts*/
 
 p, button, form, input, div, textarea {
