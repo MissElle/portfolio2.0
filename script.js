@@ -18,6 +18,7 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
+window.addEventListener('beforeunload', handleBackButton);
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -85,7 +86,6 @@ function resetClickEvent() {
 		
 		clickEvent = false;	
 	}
-
 }
 			
 //============================================//
@@ -204,95 +204,18 @@ function openImageBox(el) {
 //============================================//
 //This function loads a random emoticon into the emoticon box
 
+function handleBackButton(){
+	console.log("I am being listened to");
+}
+
+//============================================//
+//This function loads a random emoticon into the emoticon box
+
 function loadEmoticons() {
 		var emoticonSwap = document.getElementById('emoticon-swap');
 		var i = Math.floor(Math.random()*emoticons.length);
 	
 		emoticonSwap.innerHTML = '<p>' + emoticons[i] +'</p>';
-}
-
-//============================================//
-//This function loads all preview images/content for non-interactive imagery
-
-function generateImgPreviews(name, array) {
-	var mainPage = document.getElementById('main');
-	
-	var newArticle = document.createElement('article');
-	mainPage.appendChild(newArticle);
-	var newDiv = document.createElement('div');
-	newDiv.className = 'flex-images';
-	
-	var newH4 = document.createElement('h4');
-	var newH4Text = document.createTextNode(name);
-	newH4.appendChild(newH4Text);
-	newArticle.appendChild(newH4);
-	newArticle.appendChild(newDiv);
-						
-		for(var i=0; i<array.length; ++i){
-			var imageCategory = images[i].category;
-			if(imageCategory.match(name)){
-				var newFigure = document.createElement('figure');
-				var newFigcaption = document.createElement('figcaption');
-				var newFigcaptionText = array[i].description;
-				newFigcaption.innerHTML = newFigcaptionText;
-
-				var newImg = document.createElement('div');
-				newImg.className = 'preview-link';
-				newImg.style.backgroundImage = 'url(' + array[i].preview +')';
-		
-				newFigure.appendChild(newImg);
-				newFigure.id = array[i].name;
-
-				newFigure.addEventListener('click', openImageBox);
-				isMobile(newFigure, newFigcaption);
-				
-				newFigure.appendChild(newFigcaption);
-				newDiv.appendChild(newFigure); 
-				}
-		}
-}
-
-//============================================//
-//This function loads all preview images/content for web pages
-
-function generateWebPreviews(name, array) {
-	var mainPage = document.getElementById('main');
-	
-	var newArticle = document.createElement('article');
-	mainPage.appendChild(newArticle);
-	var newDiv = document.createElement('div');
-	newDiv.className = 'flex-images';
-	
-	var newH2 = document.createElement('h2');
-	var newH2Text = document.createTextNode(name);
-	newH2.appendChild(newH2Text);
-	newArticle.appendChild(newH2);
-	newArticle.appendChild(newDiv);
-						
-		for(var i=0; i<array.length; ++i){
-			var imageCategory = webLinks[i].category;
-			if(imageCategory.match(name)){
-				var newLink = document.createElement('a');
-				newLink.href = array[i].hyperlink;
-				newLink.target = '_blank'
-				var newFigure = document.createElement('figure');
-				var newFigcaption = document.createElement('figcaption');
-				var newFigcaptionText = array[i].description;
-				newFigcaption.innerHTML = newFigcaptionText;
-
-				var newImg = document.createElement('div');
-				newImg.className = 'preview-link';
-				newImg.style.backgroundImage = 'url(' + array[i].preview +')';
-				newFigure.appendChild(newImg);
-				newFigure.id = array[i].name;
-
-				isMobile(newFigure, newFigcaption);
-				
-				newFigure.appendChild(newFigcaption);
-				newLink.appendChild(newFigure);
-				newDiv.appendChild(newLink); 
-		}
-	}
 }
 
 //============================================//
@@ -309,7 +232,6 @@ function formDataConfirm() {
 	}, 7000);
 	
 	event.preventDefault();
-	
 }
 
 
