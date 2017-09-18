@@ -18,18 +18,7 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
-window.addEventListener('beforeunload', function(e){	
-	var imgBox =document.getElementById('dark-box');
-	var confirmationMessage = '\o/';
-	
-	if(imgBox.className === 'fade-in'){
-		closeImageBox();
-		e.returnValue = undefined;
-		return undefined;
-	}else{
-		console.log('I am not listening');
-	}
-});
+window.addEventListener('hashchange', handleBackButton);
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -150,7 +139,6 @@ function closeImageBox() {
 	var changeoutText = document.getElementById('changeout-text');
 	var changeoutImage = document.getElementById('changeout-image');
 	
-	
 	changeoutText.innerHTML = '';
 	changeoutImage.src = '';
 	mainDiv.style.pointerEvents = '';
@@ -167,6 +155,8 @@ function openImageBox(el) {
 	var footerTag = document.getElementById('footer');
 	var htmlTag = document.getElementById('html');
 	var mainDiv = document.getElementById('main');
+	
+	location.hash = "#image-open";
 	
 	for (var i=0; i<images.length; ++i){
 		var imageName = images[i].name;
@@ -199,19 +189,15 @@ function openImageBox(el) {
 //============================================//
 //This function prevents back button behaviors when the image box is open
 
-//function handleBackButton(event){
-//	var imgBox =document.getElementById('dark-box');
-//	var confirmBack = '\0/';
-//	
-//	if(imgBox.className === 'fade-in'){
-//		console.log('I am listening');
-//		closeImageBox();
-//		event.returnValue =  confirmBack;
-//		return confirmBack;
-//	}else{
-//		console.log('I am not listening');
-//	}
-//}
+function handleBackButton(event){
+	var imgBox =document.getElementById('dark-box');
+	
+	if(location.hash){
+		console.log('hash is open!');
+	}else{
+		closeImageBox();
+	}
+}
 
 //============================================//
 //This function loads a random emoticon into the emoticon box
