@@ -18,7 +18,7 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
-window.addEventListener('beforeunload', handleBackButton);
+//window.addEventListener('beforeunload', handleBackButton);
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -87,22 +87,6 @@ function resetClickEvent() {
 		clickEvent = false;	
 	}
 }
-			
-//============================================//
-//This detects if the device is mobile and changes the handling of figcaptions
-
-function isMobile(a, b) {
-
-	if(/iPhone|iPad|iPod|Android| Blackberry|Opera Mini|IEMobile/i.test(navigator.userAgent)){
-		a.style.height = '22em';
-		b.className = 'mobile';
-	}else {
-		a.style.height = '15em';
-		b.className = 'not-mobile';
-	}
-}
-
-//isMobile() test mostly derived from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 
 //============================================//
 //This function formats the #image-box depending on img natural aspect ratio compared to the window aspect ratio
@@ -204,19 +188,18 @@ function openImageBox(el) {
 //============================================//
 //This function loads a random emoticon into the emoticon box
 
-function handleBackButton(event){
-	event.preventDefault();
-	var imgBox =document.getElementById('dark-box');
-	window.history.forward();
-	console.log("I am being listened to");
-	
-	if(imgBox.className === 'fade-in'){
-		window.history.forward();
-		closeImageBox();
-	}else{
-		window.history.back();
-	}
-}
+//function handleBackButton(event){
+//	event.preventDefault();
+//	var imgBox =document.getElementById('dark-box');
+//	window.history.forward();
+//	console.log("I am being listened to");
+//	
+//	if(imgBox.className === 'fade-in'){
+//		closeImageBox();
+//	}else{
+//		window.history.back();
+//	}
+//}
 
 //============================================//
 //This function loads a random emoticon into the emoticon box
