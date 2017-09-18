@@ -7,6 +7,8 @@ var previousScroll = 0; //This updates after every scroll to afix the header onl
 
 var clickEvent = false; //This will determine if the menu should be opened or closed
 
+var boxOpen = false;
+
 //============================================//
 //These are all the event listeners
 
@@ -190,9 +192,13 @@ function openImageBox(el) {
 
 function handleBackButton(){
 	var imgBox =document.getElementById('dark-box');
+	var confirmBack = '\o/';
 	
 	if(imgBox.className === 'fade-in'){
 		console.log('I am listening');
+		closeImageBox();
+		event.returnValue =  confirmBack;
+//		return confirmBack;
 	}else{
 		console.log('I am not listening');
 	}
