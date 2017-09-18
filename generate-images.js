@@ -13,6 +13,23 @@ function sortNumber(a, b) {
 }
 
 //============================================//
+//This detects if the device is mobile and changes the handling of figcaptions
+
+function isMobile(a, b) {
+
+	if(/iPhone|iPad|iPod|Android| Blackberry|Opera Mini|IEMobile/i.test(navigator.userAgent)){
+		a.style.height = '22em';
+		b.className = 'mobile';
+	}else {
+		a.style.height = '15em';
+		b.className = 'not-mobile';
+	}
+}
+
+//isMobile() test mostly derived from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+
+
+//============================================//
 //This function detects which page the user is on
 
 function detectPage() {
