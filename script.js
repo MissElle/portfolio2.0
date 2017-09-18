@@ -18,6 +18,7 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
+window.addEventListener('beforeunload', handleBackButton);
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -182,6 +183,19 @@ function openImageBox(el) {
 	htmlTag.style.overflow = 'hidden';
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
+}
+
+//============================================//
+//This function prevents back button behaviors when the image box is open
+
+function handleBackButton(){
+	var imgBox =document.getElementById('dark-box');
+	
+	if(imgBox.className === 'fade-in'){
+		console.log('I am listening');
+	}else{
+		console.log('I am not listening');
+	}
 }
 
 //============================================//
