@@ -190,7 +190,7 @@ function openImageBox(el) {
 //============================================//
 //This function prevents back button behaviors when the image box is open
 
-function handleBackButton(){
+function handleBackButton(event){
 	var imgBox =document.getElementById('dark-box');
 	var confirmBack = '\o/';
 	
@@ -198,7 +198,7 @@ function handleBackButton(){
 		console.log('I am listening');
 		closeImageBox();
 		event.returnValue =  confirmBack;
-//		return confirmBack;
+		return confirmBack;
 	}else{
 		console.log('I am not listening');
 	}
