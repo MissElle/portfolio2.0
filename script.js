@@ -204,8 +204,18 @@ function openImageBox(el) {
 //============================================//
 //This function loads a random emoticon into the emoticon box
 
-function handleBackButton(){
+function handleBackButton(event){
+	event.preventDefault();
+	var imgBox =document.getElementById('dark-box');
+	window.history.forward();
 	console.log("I am being listened to");
+	
+	if(imgBox.className === 'fade-in'){
+		window.history.forward();
+		closeImageBox();
+	}else{
+		window.history.back();
+	}
 }
 
 //============================================//
@@ -233,7 +243,6 @@ function formDataConfirm() {
 	
 	event.preventDefault();
 }
-
 
 //============================================//
 //All arrays that hold generated content are here
