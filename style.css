@@ -59,7 +59,10 @@ body {
 	position: fixed;
 	margin: 0 auto;
 	z-index: 50;
-	background-color: #ffffff;
+	background: linear-gradient(to  bottom, #ffffff 85%, transparent);
+	-webkit-background: linear-gradient(to  bottom, #ffffff 85%, transparent);
+	-o-background: linear-gradient(to  bottom, #ffffff 85%, transparent);
+	-moz-background: linear-gradient(to  bottom, #ffffff 85%, transparent);
 	pointer-events: none;
 }
 
