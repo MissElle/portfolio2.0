@@ -55,19 +55,12 @@ body {
 	border: .35em double #585d66;
 }
 
-/*
-#image-side {
-	float: left;
-	padding: .5em;
-	z-index: 50;
-}
-*/
-
 #image-side {
 	position: fixed;
 	margin: 0 auto;
 	z-index: 50;
 	background-color: #ffffff;
+	pointer-events: none;
 }
 
 #changeout-image {
@@ -77,17 +70,6 @@ body {
 	object-position: center;
 	pointer-events: none;
 }
-
-/*
-#description-side {
-	background-color: rgba(255, 255, 255, 1);
-	float: left;
-	padding: .5em;
-	overflow-y: auto;
-	overflow-x: hidden;
-	z-index: 49;
-}
-*/
 
 #description-side {
 	background-color: rgba(255, 255, 255, 1);
