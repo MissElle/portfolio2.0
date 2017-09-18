@@ -171,7 +171,7 @@ function openImageBox(el) {
 				}else{
 					changeoutImage.src = images[i].source;
 				}
-				changeoutText.innerHTML = images[i].description;
+				changeoutText.innerHTML = images[i].title + images[i].description;
 			}else {
 				changeoutImage.src = brokenLink.source;
 				changeoutText.innerHTML = brokenLink.description;
