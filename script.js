@@ -97,32 +97,32 @@ function detectAspectRatio() {
 	
 	var imgWidth = document.getElementById('changeout-image').naturalWidth;
 	var imgHeight = document.getElementById('changeout-image').naturalHeight;
-	
 	var descriptionSide = document.getElementById('description-side');
 	var imageSide = document.getElementById('image-side');
 	var changeoutText = document.getElementById('changeout-text');
+	var changeoutImage = document.getElementById('changeout-image');
 	var para = changeoutText.querySelector('p');
 	
 	var windowRatio = docWidth/docHeight;
-	var windowRatioModified = windowRatio - .33;
+	var windowRatioModified = windowRatio - .35;
 	var imageRatio = imgWidth/imgHeight;
 	
 	if(windowRatioModified >= imageRatio) {
-		imageSide.style.height = '100%';
-		imageSide.style.width = '70%';
-		descriptionSide.style.width = '30%';
-		descriptionSide.style.height = '100%';
+		imageSide.style.height = '90%';
+		imageSide.style.width = '60%';
 		changeoutText.style.textAlign = 'right';
+		changeoutText.style.paddingLeft = '70%';
+		changeoutText.style.paddingTop = '';
 		para.style.textAlign = 'right';
 	}else {
-		imageSide.style.height = '70%';
-		imageSide.style.width = '100%';
-		descriptionSide.style.width ='100%';
-		descriptionSide.style.height = '30%';
+		imageSide.style.height = '67%';
+		imageSide.style.width = '86%';
 		changeoutText.style.textAlign = 'left';
+		changeoutText.style.paddingLeft = '';
+		changeoutText.style.paddingTop = document.getElementById('image-side').clientHeight + 5 + 'px';
 		para.style.textAlign = 'left';
 	}
-	console.log(windowRatio + ' ' + imageRatio);
+	console.log(windowRatioModified + ' ' + imageRatio);
 }
 
 //============================================//
