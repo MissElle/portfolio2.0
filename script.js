@@ -18,7 +18,6 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
-//window.addEventListener('beforeunload', handleBackButton);
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -184,22 +183,6 @@ function openImageBox(el) {
 	imgBox.style.display = 'flex';
 	imgBox.className = 'fade-in';
 }
-
-//============================================//
-//This function loads a random emoticon into the emoticon box
-
-//function handleBackButton(event){
-//	event.preventDefault();
-//	var imgBox =document.getElementById('dark-box');
-//	window.history.forward();
-//	console.log("I am being listened to");
-//	
-//	if(imgBox.className === 'fade-in'){
-//		closeImageBox();
-//	}else{
-//		window.history.back();
-//	}
-//}
 
 //============================================//
 //This function loads a random emoticon into the emoticon box
