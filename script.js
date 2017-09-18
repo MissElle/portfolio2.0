@@ -7,8 +7,6 @@ var previousScroll = 0; //This updates after every scroll to afix the header onl
 
 var clickEvent = false; //This will determine if the menu should be opened or closed
 
-var boxOpen = false;
-
 //============================================//
 //These are all the event listeners
 
@@ -20,7 +18,18 @@ window.addEventListener('load', loadEmoticons);
 window.addEventListener('load', loadEmoticons);
 window.addEventListener('resize', resetClickEvent);
 document.getElementById('cross').addEventListener('click', closeImageBox);
-window.addEventListener('beforeunload', handleBackButton);
+window.addEventListener('beforeunload', function(e){	
+	var imgBox =document.getElementById('dark-box');
+	var confirmationMessage = '\o/';
+	
+	if(imgBox.className === 'fade-in'){
+		closeImageBox();
+		e.returnValue = undefined;
+		return undefined;
+	}else{
+		console.log('I am not listening');
+	}
+});
 document.getElementById('submit').addEventListener('click', formDataConfirm);
 
 //============================================//
@@ -190,19 +199,19 @@ function openImageBox(el) {
 //============================================//
 //This function prevents back button behaviors when the image box is open
 
-function handleBackButton(event){
-	var imgBox =document.getElementById('dark-box');
-	var confirmBack = '\o/';
-	
-	if(imgBox.className === 'fade-in'){
-		console.log('I am listening');
-		closeImageBox();
-		event.returnValue =  confirmBack;
-		return confirmBack;
-	}else{
-		console.log('I am not listening');
-	}
-}
+//function handleBackButton(event){
+//	var imgBox =document.getElementById('dark-box');
+//	var confirmBack = '\0/';
+//	
+//	if(imgBox.className === 'fade-in'){
+//		console.log('I am listening');
+//		closeImageBox();
+//		event.returnValue =  confirmBack;
+//		return confirmBack;
+//	}else{
+//		console.log('I am not listening');
+//	}
+//}
 
 //============================================//
 //This function loads a random emoticon into the emoticon box
