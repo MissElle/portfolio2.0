@@ -11,6 +11,8 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 //These are all the event listeners
 
 window.addEventListener('scroll', stickyHeader);
+window.addEventListener('scroll', mobileBrowserHide);
+window.addEventListener('load', mobileBrowserHide);
 document.getElementById('hamburger').addEventListener('click', menuFunctions);
 document.getElementById('changeout-image').addEventListener('load', detectAspectRatio);
 window.addEventListener('resize', detectAspectRatio);
@@ -35,6 +37,13 @@ function stickyHeader() {
 	}
 	
 	previousScroll=window.pageYOffset; //This will be used to see if the user "scrolls up" by comparing it to the previous scroll number
+}
+
+//============================================//
+//This hides the address bar when scrolling
+
+function mobileBrowserHide() {
+	document.body.requestFullscreen();
 }
 
 //============================================//
