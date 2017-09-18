@@ -43,10 +43,10 @@ function stickyHeader() {
 //This hides the address bar when scrolling
 
 function mobileBrowserHide() {
-	window.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-	window.mozRequestFullScreen();
-	window.msRequestFullscreen();
-	window.requestFullscreen();
+	div.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+	div.mozRequestFullScreen();
+	div.msRequestFullscreen();
+	div.requestFullscreen();
 }
 
 //============================================//
