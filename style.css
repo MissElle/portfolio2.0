@@ -132,6 +132,18 @@ body {
 
 #artist-name {display: flex; flex-flow: row nowrap;}
 
+#svg-holder {width: 9.2em;}
+.svg-path{fill:#ffffff;}
+#svg-name:hover>.svg-path{fill:#89c2ff;}
+#svg-name:hover>g>.svg-path{fill:#89c2ff;}
+
+#svg-name:active{
+	filter: drop-shadow(0 0 .23em #89c2ff);
+	-webkit-filter: drop-shadow(0 0 .23em #89c2ff);
+}
+#svg-name:active>.svg-path{fill:#ffffff;}
+#svg-name:active>g>.svg-path{fill:#ffffff;}
+
 #emoticon-swap {min-width: 5.4em;}
 
 header{
@@ -325,9 +337,6 @@ nav>ul a:active {
 }
 
 @media all and (max-width: 38.125em) {
-	header div {width: 0; overflow: visible;}
-	header>div p {width: 90vw;} /*This is to keep the name visible, but the div element at 0. Prevents overlap issues in the styling.*/
-	
 	nav>ul {display: none;}
 	
 	nav>ul li, .menuShow>ul li {position: absolute; width: 4em;}
