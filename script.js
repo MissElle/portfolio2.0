@@ -11,7 +11,6 @@ var clickEvent = false; //This will determine if the menu should be opened or cl
 //These are all the event listeners
 
 window.addEventListener('scroll', stickyHeader);
-window.addEventListener('scroll', mobileBrowserHide);
 window.addEventListener('load', mobileBrowserHide);
 document.getElementById('hamburger').addEventListener('click', menuFunctions);
 document.getElementById('changeout-image').addEventListener('load', detectAspectRatio);
@@ -43,18 +42,9 @@ function stickyHeader() {
 //This hides the address bar when scrolling
 
 function mobileBrowserHide() {
-  var doc = window.document;
-  var docEl = doc.documentElement;
-
-  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-    requestFullScreen.call(docEl);
-  }
-  else {
-    cancelFullScreen.call(doc);
-  }
+	setTimeout(function(){
+		window.scrollTo(0,1);
+	}, 0);
 }
 
 //============================================//
