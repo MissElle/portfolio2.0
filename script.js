@@ -46,7 +46,7 @@ function mobileBrowserHide() {
 	var winDoc = document.documentELement;
 	
 	if((window.pageYOffset === 0 && previousScroll === 0) || window.pageYOffset !== 0){
-		document.body.requestFullscreen()
+		document.body.requestFullscreen();
 	}else if(window.pageYOffset === 0 && previousScroll !== 0){
 		document.body.exitFullscreen();
 	}
