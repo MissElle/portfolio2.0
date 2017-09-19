@@ -45,16 +45,10 @@ function stickyHeader() {
 function mobileBrowserHide() {
 	var winDoc = document.documentELement;
 	
-	if(window.pageYOffset === 0 && previousScroll === 0){
-		winDoc.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-		winDoc.mozRequestFullScreen();
-		winDoc.msRequestFullscreen();
-		winDoc.requestFullscreen();
+	if((window.pageYOffset === 0 && previousScroll === 0) || window.pageYOffset !== 0){
+		document.body.requestFullscreen()
 	}else if(window.pageYOffset === 0 && previousScroll !== 0){
-		winDoc.webkitExitFullscreen();
-		winDoc.mozCancelFullscreen();
-		winDoc.msExitFullscreen();
-		winDoc.exitFullscreen();
+		document.body.exitFullscreen();
 	}
 }
 
