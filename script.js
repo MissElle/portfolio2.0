@@ -43,10 +43,19 @@ function stickyHeader() {
 //This hides the address bar when scrolling
 
 function mobileBrowserHide() {
-	document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-	document.documentElement.mozRequestFullScreen();
-	document.documentElement.msRequestFullscreen();
-	document.documentElement.requestFullscreen();
+	var winDoc = window.document.documentELement;
+	
+	if(window.pageYOffset === 0 && previousScroll === 0){
+		winDoc.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		winDoc.mozRequestFullScreen();
+		winDoc.msRequestFullscreen();
+		winDoc.requestFullscreen();
+	}else if(window.pageYOffset === 0 && previousScroll !== 0){
+		winDoc.webkitExitFullscreen();
+		winDoc.mozCancelFullscreen();
+		winDoc.msExitFullscreen();
+		winDoc.exitFullscreen();
+	}
 }
 
 //============================================//
