@@ -97,6 +97,7 @@ function detectPage() {
 		pageH1.appendChild(pageH1text);
 		mainPage.appendChild(pageH1);
 		
+		generateWebPreviews('PHP and Wordpress', webLinks);
 	
 		generateWebPreviews('Javascript and JQuery', webLinks);
 
@@ -562,6 +563,12 @@ var images = [
 //This array is for webLinks and previews, since function is much different than images
 
 var webLinks = [
+	{'name' : 'website-matt-rothaus',
+	 'category' : 'PHP and Wordpress',
+	 'preview' : 'images/website-matt-rothaus.jpg',
+	 'date' : 20170927,
+	 'hyperlink' : 'http://www.mr-ecology.com',
+	 'description' : '<h1>Ecology Blog</h1><h3>Wordpress and Contact Forms</h3><p>September 2017</p><p>Along with creating a functional Wordpress blog that the author can easily update, the challenge of a custom web form was had.</p>'},
 	{'name' : 'website-magic-8-ball',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-magic-8-ball.jpg',
