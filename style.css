@@ -731,7 +731,21 @@ footer form {
 }
 
 #copyright {float: left; font-size: 1.2em; padding: 0 0.2em; margin-top: -.2em; font-family:'Amaranth', sans-serif;}
-#company-logo {max-width: 12.6em; float: left;}
+#copyright-holder>a>svg {max-width: 12.6em; float: left;}
+
+/*Hover and active effects for copyright Link*/
+#copyright-holder>a>svg>path{fill: #ffffff;}
+#copyright-holder:hover>a>svg>path{fill: #89c2ff;}
+#copyright-holder:hover>p{color: #89c2ff;}
+#copyright-holder:active>a>svg{
+	filter: drop-shadow(0 0 .23em #89c2ff);
+	-webkit-filter: drop-shadow(0 0 .23em #89c2ff);
+}
+#copyright-holder:active>a>svg>path{fill:#ffffff;}
+#copyright-holder:active>p{
+	text-shadow: 0 0 .23em #89c2ff;
+	color: #ffffff;
+}
 
 @media all and (max-width: 59em){
 	.little-bio {
