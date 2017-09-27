@@ -152,12 +152,15 @@ function closeImageBox() {
 function openImageBox(el) {
 	var imgBox =document.getElementById('dark-box');
 	var elName = this.id;
+	
+	var cross = document.getElementById('cross');
 	var footerTag = document.getElementById('footer');
 	var htmlTag = document.getElementById('html');
 	var mainDiv = document.getElementById('main');
 	
 	if(/Android/i.test(navigator.userAgent)){
 		location.hash = "#image-open";
+		cross.style.display = 'none';
 	}
 		 
 	for (var i=0; i<images.length; ++i){
