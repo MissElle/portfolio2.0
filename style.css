@@ -14,19 +14,39 @@
 }
 
 html{
+	width: 100%;
 	overflow-x: hidden;
+}
+
+body {
+	overflow-x: hidden;
+	height: 100%;
+	width: 100%;
+	color: #272735;
+}
+
+#gradient {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 	background: #000000;
 	background: -webkit-linear-gradient(bottom, #ffffff, #b8c2d6, #10002d, #000000 170%);
 	background: -o-linear-gradient(bottom, #ffffff, #b8c2d6, #10002d, #000000 170%);
 	background: -moz-linear-gradient(bottom, #ffffff, #b8c2d6, #10002d, #000000 170%);
 	background: linear-gradient(to top, #ffffff, #b8c2d6, #10002d, #000000 170%);
-	color: #272735;
 }
 
-body {
+#index, #design, #webdev, #illustration {
+	position: fixed;
+	top: 0;
+	left: -50%;
+	width: 500%;
+	height: 500%;
 	background-image: url(images/halftone.svg);
 	background-repeat: repeat;
 	background-size: 1.3em;
+	transform: rotate(33deg);
 }
 
 /*============================================*/
