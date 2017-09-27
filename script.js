@@ -156,8 +156,10 @@ function openImageBox(el) {
 	var htmlTag = document.getElementById('html');
 	var mainDiv = document.getElementById('main');
 	
-	location.hash = "#image-open";
-	
+	if(/Android/i.test(navigator.userAgent)){
+		location.hash = "#image-open";
+	}
+		 
 	for (var i=0; i<images.length; ++i){
 		var imageName = images[i].name;
 		
@@ -192,9 +194,7 @@ function openImageBox(el) {
 function handleBackButton(event){
 	var imgBox =document.getElementById('dark-box');
 	
-	if(location.hash){
-		console.log('hash is open!');
-	}else{
+	if(!location.hash){
 		closeImageBox();
 	}
 }
