@@ -39,10 +39,10 @@ body {
 
 #index, #design, #webdev, #illustration {
 	position: fixed;
-	top: 0;
-	left: -50%;
-	width: 500%;
-	height: 500%;
+	top: -25em;
+	left: -60em;
+	width: 300em;
+	height: 300em;
 	background-image: url(images/halftone.svg);
 	background-repeat: repeat;
 	background-size: 1.3em;
@@ -555,7 +555,7 @@ div.flex-images>a {
 div.preview-link {
 	width: 100%;
 	height: 15em;
-	background-position: center center;
+	background-position: top center;
 	background-size: cover;
 	box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
 	-o-box-shadow: inset 0 0 1.3em .3em  rgba(255, 255, 255, .9);
