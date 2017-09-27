@@ -159,7 +159,7 @@ function openImageBox(el) {
 	var mainDiv = document.getElementById('main');
 	
 	if(/Android/i.test(navigator.userAgent)){
-		location.hash = "#image-open";
+		location.hash = '#image-open';
 		cross.style.display = 'none';
 	}
 		 
