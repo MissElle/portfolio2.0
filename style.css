@@ -989,6 +989,13 @@ div.round:before { /*taken from css-tricks*/
 	justify-content: space-between;
 }
 
+#name-wrapper-resume{
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
 #wrapper-resume{
 	position: relative;
 	margin: 0 auto;
@@ -1011,7 +1018,7 @@ div.round:before { /*taken from css-tricks*/
 
 #name-resume{
 	font-size: 2em;
-	padding: 1rem 0;
+	padding: 1rem 0 1rem 1rem;
 	width: 73%;
 	display: flex;
 	flex-flow: column nowrap;
@@ -1328,6 +1335,56 @@ div.rightrule>i {
 
 div.rightrule:nth-of-type(2)>i{margin: -.7em;}
 i.fa-code{font-weight: bold;}
+
+/*============================================*/
+/*stylings for mobile devices */
+
+@media screen and (max-width: 52.0625em){
+	#main-resume{flex-flow: column nowrap;}
+	
+	#left-resume{width: 100%;}
+	
+	#right-resume{
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	#right-resume>article:nth-of-type(2){
+		border-radius: 0;
+	}
+	
+	#contact-resume{font-size: 2.1vw;}
+	
+	div.rightrule {
+		justify-content: center;
+		padding: 0;
+	}
+	
+}
+
+@media screen and (max-width: 49.4em){
+	#header-resume{
+		flex-flow: column nowrap;
+	}
+	
+	#contact-resume{
+		margin: 0;
+		padding: 1rem 1rem 2rem 1rem;
+		text-align: left;
+		width: 100%;
+		height: auto;
+		min-width: 100%;
+		max-width: 100%;
+		font-size: 1.1em;
+		border-radius: 0;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	
+	#main-resume{
+		top: -3em; 
+	}
+}
 
 /*============================================*/
 /*stylings for print backgrounds */
