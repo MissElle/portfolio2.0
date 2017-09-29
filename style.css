@@ -1012,9 +1012,7 @@ div.round:before { /*taken from css-tricks*/
 	width: 18%
 }
 
-#logo-resume>img{
-	max-height: 9em;
-}
+#logo-resume>img{max-height: 9em;}
 
 #name-resume{
 	font-size: 2em;
@@ -1145,10 +1143,13 @@ div.education-flex{
 .left-section-resume:nth-of-type(2)>.headings-resume>h3{
 	width: 25%;
 	display: flex;
+	justify-content: flex-start;
+}
+.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(2),.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(4){
 	justify-content: flex-end;
 }
-.left-section-resume:nth-of-type(2)>.headings-resume>h3:first-child,.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(2){
-	justify-content: flex-start;
+.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(3),.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(2){
+	padding: 0 3rem;
 }
 
 .left-section-resume:nth-of-type(3)>.headings-resume {
@@ -1360,6 +1361,10 @@ i.fa-code{font-weight: bold;}
 		padding: 0;
 	}
 	
+	.work-experience-resume{
+		margin-top: -4rem;
+	}
+	
 }
 
 @media screen and (max-width: 49.4em){
@@ -1381,9 +1386,53 @@ i.fa-code{font-weight: bold;}
 		justify-content: space-around;
 	}
 	
+	#contact-resume>p{
+		padding: 0 .5rem;
+	}
+	
 	#main-resume{
 		top: -3em; 
 	}
+}
+
+@media screen and (max-width: 36.25em){
+	#name-resume{font-size: 5.5vw;}
+	#logo-resume>img{
+		max-height: 25vw;
+	}
+	
+	.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(4), .left-section-resume:nth-of-type(2)>.headings-resume>h3:first-child{display: none;}
+	
+	.left-section-resume:nth-of-type(2)>.headings-resume {justify-content: center;}
+	
+}
+
+@media screen and (max-width: 29em){
+	.left-section-resume:nth-of-type(3)>ul{
+		width: 97%;
+		margin: 0;
+	}
+	
+	* {text-align: left;}
+	
+	.left-section-resume:nth-of-type(3)>ul:last-child{
+		margin: 0 0 2rem 0;
+	}
+}
+
+@media screen and (max-width: 24.375){
+	.headings-resume>h3{
+		font-size: 2vw;
+	}
+}
+
+@media screen and (max-width: 23.75em){
+	#contact-resume {
+		flex-flow: column nowrap;
+		align-items: center;
+	}
+	
+	#logo-resume {width: 35%;}
 }
 
 /*============================================*/
