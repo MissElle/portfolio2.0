@@ -1418,11 +1418,9 @@ i.fa-code{font-weight: bold;}
 	.left-section-resume:nth-of-type(3)>ul:last-child{
 		margin: 0 0 2rem 0;
 	}
-}
-
-@media screen and (max-width: 24.375){
+	
 	.headings-resume>h3{
-		font-size: 2vw;
+		font-size: 6vw;
 	}
 }
 
