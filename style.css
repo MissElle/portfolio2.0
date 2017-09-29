@@ -1084,6 +1084,7 @@ div.round:before { /*taken from css-tricks*/
 
 #right-resume>article:nth-of-type(2){
 	background-color: #d5dce8;
+	border-radius: 0 0 1em 0;
 }
 
 .left-section-resume:first-of-type{margin-top: 2rem;}
@@ -1126,7 +1127,7 @@ div.education-flex{
 	margin: .3rem 0;
 }
 
-.left-section-resume>.headings-resume {
+.left-section-resume:nth-of-type(2)>.headings-resume {
 	width: 98%%;
 	margin: 0 auto;
 	display: flex;
@@ -1134,12 +1135,32 @@ div.education-flex{
 	justify-content: space-between;
 }
 
-.left-section-resume:nth-of-type(3)>.headings-resume{
-	justify-content: center;
+.left-section-resume:nth-of-type(2)>.headings-resume>h3{
+	width: 25%;
+	display: flex;
+	justify-content: flex-end;
+}
+.left-section-resume:nth-of-type(2)>.headings-resume>h3:first-child,.left-section-resume:nth-of-type(2)>.headings-resume>h3:nth-child(2){
+	justify-content: flex-start;
 }
 
-.left-section-resume:nth-of-type(3)>.headings-resume>h3 {
-	margin: .3rem 3.5rem;
+.left-section-resume:nth-of-type(3)>.headings-resume {
+	width: 98%%;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.left-section-resume:nth-of-type(3)>.headings-resume>h3{
+	width: 50%;
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 3rem;
+}
+.left-section-resume:nth-of-type(3)>.headings-resume>h3:first-child{
+	justify-content: flex-end;
+	padding-right: 3rem;
 }
 
 .rating-resume {
@@ -1160,6 +1181,21 @@ div.education-flex{
 	list-style: none;
 	margin: .5rem;
 	text-align: center;
+}
+
+.left-section-resume:nth-of-type(3)>ul{
+	width: 47%;
+	font-size: 1.2em;
+}
+
+.left-section-resume:nth-of-type(3)>ul>li>a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #471ca5;
+	transition: color .2s ease-in-out;
+}
+.left-section-resume:nth-of-type(3)>ul>li>a:hover{
+	color: aqua;
 }
 
 .left-section-resume>ul>li>div{
@@ -1204,6 +1240,35 @@ div.education-flex{
 .work-resume>h3{font-size: 1.25em;}
 
 .reference-resume>h3{padding-top: 1rem;}
+
+.work-experience-resume {
+	width: 100%;
+	padding: 1rem;
+}
+
+.work-experience-resume>.headings-resume{
+	width: 98%%;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.work-experience-resume>.headings-resume>h3{
+	display: block;
+	width: 50%;
+	margin: .3rem 0;
+}
+
+.work-experience-resume>.headings-resume>h3:first-child{
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 3rem;
+}
+
+.work-experience-resume>.headings-resume>h3:last-child{
+	padding-left: 3rem;
+}
 
 /*stylings for all the icons and HRs*/
 
@@ -1263,3 +1328,23 @@ div.rightrule>i {
 
 div.rightrule:nth-of-type(2)>i{margin: -.7em;}
 i.fa-code{font-weight: bold;}
+
+/*============================================*/
+/*stylings for print backgrounds */
+
+@media print {
+
+	#wrapper-resume{
+		font-size: 84%;
+	}
+	
+	#contact-resume{
+		width: 30%;
+		padding: 1rem;
+	}
+	
+}
+
+@page{
+	margin: .2cm;
+}
