@@ -572,7 +572,7 @@ var webLinks = [
 	{'name' : 'website-magic-8-ball',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-magic-8-ball.jpg',
-	'date' : 20170411,
+	'date' : 20171005,
 	'hyperlink' : 'https://misselle.github.io/8-ball/',
 	'description' : '<h1>Sarcastic 8-Ball</h1><h3>Array Generation Test</h3><p>April 2017</p><p>Test to use minimal amount of imagery for maximum design. Only "8" is an image. 8-Ball will give sarcastic responses to questions as well as specific answers to specific questions.</p>'},
 	{'name' : 'website-calculator-animation',
