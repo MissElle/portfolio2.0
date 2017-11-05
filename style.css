@@ -49,7 +49,7 @@ body {
 	transform: rotate(33deg);
 }
 
-#load-call{speak: none;}
+#load-call{speak: none; display: none;}
 
 /*============================================*/
 /*Stylings for the image container*/
