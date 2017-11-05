@@ -49,6 +49,8 @@ body {
 	transform: rotate(33deg);
 }
 
+#load-call{speak: none;}
+
 /*============================================*/
 /*Stylings for the image container*/
 
