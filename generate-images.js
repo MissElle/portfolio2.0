@@ -3,7 +3,7 @@
 //============================================//
 //These are the event listeners only for image generations
 
-window.addEventListener('load', detectPage);
+//document.getElementById('mainImg').addEventListener('load', detectPage);
 
 //============================================//
 //This function will sort the array by date, newest first
