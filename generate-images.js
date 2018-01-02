@@ -44,23 +44,26 @@ function detectPage() {
 		var mainPage = document.getElementById('main');
 		var pageH1 = document.createElement('h1');
 		var pageH1Text;
+        var newH2;
+        var newH2Text;
 		pageH1text = document.createTextNode('Design');
 		pageH1.appendChild(pageH1text);
 		mainPage.appendChild(pageH1);
-		
-		var newH2 = document.createElement('h2');
-		var newH2Text = document.createTextNode('Composition and Layout');
+      
+        newH2 = document.createElement('h2');
+		newH2Text = document.createTextNode('Iconography and Logos');
+		newH2.appendChild(newH2Text);
+		mainPage.appendChild(newH2);
+        generateImgPreviews('Web Logos', images);
+		generateImgPreviews('2017 Pride', images);
+		generateImgPreviews('12 Icons, 48 Hours', images);
+      
+		newH2 = document.createElement('h2');
+		newH2Text = document.createTextNode('Composition and Layout');
 		newH2.appendChild(newH2Text);
 		mainPage.appendChild(newH2);
 		generateImgPreviews('Design and Composition', images);
 		generateImgPreviews('Layout Only', images);
-		
-		newH2 = document.createElement('h2');
-		newH2Text = document.createTextNode('Iconography');
-		newH2.appendChild(newH2Text);
-		mainPage.appendChild(newH2);
-		generateImgPreviews('2017 Pride', images);
-		generateImgPreviews('12 Logos, 48 Hours', images);
 		
 	}else if (illustration !== null){
 		var mainPage = document.getElementById('main');
@@ -97,11 +100,9 @@ function detectPage() {
 		pageH1.appendChild(pageH1text);
 		mainPage.appendChild(pageH1);
 		
-		generateWebPreviews('PHP and Wordpress', webLinks);
+		generateWebPreviews('PHP and WordPress', webLinks);
 	
 		generateWebPreviews('Javascript and JQuery', webLinks);
-
-		generateWebPreviews('HTML5 and CSS3', webLinks);
 
 	}else{
 		console.log ('Hello Web Developer :) ');
@@ -350,30 +351,6 @@ var images = [
 	'date' : 20170624,
 	'title' : '<h1>SpiritWalk Certificates</h1><h3>Most Money Raised - Individual</h3><p>June 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to an individual who collected the most money per mile walked for the SpiritWalk route.</p>'},
-	{'name' : 'design-uihi-award-most-money-group',
-	'category' : 'Design and Composition',
-	'source' : 'images/design-uihi-award-most-money-group.png',
-	'sourceSmall' : 'images/design-uihi-award-most-money-group-400.png',
-	'preview' : 'images/design-uihi-award-most-money-group-preview.jpg',
-	'date' : 20170624,
-	'title' : '<h1>SpiritWalk Certificates</h1><h3>Most Money Raised - Group</h3><p>June 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_http://blank">The Urban Indian Health Institute</a>&#39;s annual SpiritWalk and Spirit of Indigenous People Festival has several activities that award certificates to its participants. This certificate was awarded to a group of participants who collected the most money per mile walked for the SpiritWalk route.</p><p>The frog design was not created by the artist. It is property of <a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
-	{'name' : 'design-uihi-PrEP-Postcard-v1-Page-1',
-	'category' : 'Design and Composition',
-	'source' : 'images/design-uihi-PrEP-Postcard-v1-Page-1.jpg',
-	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v1-Page-1-400.jpg',
-	'preview' : 'images/design-uihi-PrEP-Postcard-v1-Page-1-preview.jpg',
-	'date' : 20170828,
-	'title' : '<h1>PrEP Postcard</h1><h3>Version One - Side Two</h3><p>August 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the first version of side two and it will not be published.</p>'},
-	{'name' : 'design-uihi-PrEP-Postcard-v1-Page-2',
-	'category' : 'Design and Composition',
-	'source' : 'images/design-uihi-PrEP-Postcard-v1-Page-2.jpg',
-	'sourceSmall' : 'images/design-uihi-PrEP-Postcard-v1-Page-2-400.jpg',
-	'preview' : 'images/design-uihi-PrEP-Postcard-v1-Page-2-preview.jpg',
-	'date' : 20170829,
-	'title' : '<h1>PrEP Postcard</h1><h3>Version One - Side One</h3><p>August 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> in conjuction with <a href="https://www.projectinform.org/" target="_blank">Project Inform</a> have created an information postcard that describes, in depth, how to use and the effectiveness of Pre-exposure prophylaxis(PrEP). This is the first version of side one and it will not be published. The logos were not created by the artist and are property of <a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a></p>'},
 	{'name' : 'design-uihi-PrEP-Postcard-v2-Page-1',
 	'category' : 'Design and Composition',
 	'source' : 'images/design-uihi-PrEP-Postcard-v2-Page-1.jpg',
@@ -439,7 +416,7 @@ var images = [
 	'title' : '<h1>Pride Double Helix</h1><h3>Trans Pride Colors</h3><p>June 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> was unable to use this icon for Seattle&#39;s 2017 Trans Pride. At this event, UIHI passed out literature about Two-Spirit Indigenous people. Two-Spirit is a non-binary identity of American Indian and Alaska Native people that was ignored and written out during colonization. The two feathers wrapping around each other like a double helix DNA represents that the identity is written within the person.</p>'},
 	{'name' : 'design-uihi-infographic-oral-care',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-oral-care.png',
 	'sourceSmall' : 'images/design-uihi-infographic-oral-care-400.png',
 	'preview' : 'images/design-uihi-infographic-oral-care-preview.jpg',
@@ -447,7 +424,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Oral Hygiene</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for oral hygiene and oral care.</p>'},
 	{'name' : 'design-uihi-infographic-PA-education',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-PA-education.png',
 	'sourceSmall' : 'images/design-uihi-infographic-PA-education-400.png',
 	'preview' : 'images/design-uihi-infographic-PA-education-preview.jpg',
@@ -455,7 +432,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Physical Activity</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for physical activity, physical education, and exercise.</p>'},
 	{'name' : 'design-uihi-infographic-depression',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-depression.png',
 	'sourceSmall' : 'images/design-uihi-infographic-depression-400.png',
 	'preview' : 'images/design-uihi-infographic-depression-preview.jpg',
@@ -463,7 +440,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Depression</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for Depression and diagnoses for Depression.</p>'},
 	{'name' : 'design-uihi-infographic-education',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-education.png',
 	'sourceSmall' : 'images/design-uihi-infographic-education-400.png',
 	'preview' : 'images/design-uihi-infographic-education-preview.jpg',
@@ -471,39 +448,23 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Education</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for education for community and education for medical parties.</p>'},
 	{'name' : 'design-uihi-infographic-eye-exam',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-eye-exam.png',
 	'sourceSmall' : 'images/design-uihi-infographic-eye-exam-400.png',
 	'preview' : 'images/design-uihi-infographic-eye-exam-preview.jpg',
 	'date' : 20170829,
 	'title' : '<h1>UIHI Infographics</h1><h3>Eye Exam</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for eye exams and eye care.</p>'},
-	{'name' : 'design-uihi-infographic-foot-care',
-	'category' : '12 Logos, 48 Hours',
-	'source' : 'images/design-uihi-infographic-foot-care.png',
-	'sourceSmall' : 'images/design-uihi-infographic-foot-care-400.png',
-	'preview' : 'images/design-uihi-infographic-foot-care-preview.jpg',
-	'date' : 20170828,
-	'title' : '<h1>UIHI Infographics</h1><h3>Foot Care</h3><p>August 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for foot care and podiatry.</p>'},
 	{'name' : 'design-uihi-infographic-foot-care-2',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-foot-care-2.png',
 	'sourceSmall' : 'images/design-uihi-infographic-foot-care-2-400.png',
 	'preview' : 'images/design-uihi-infographic-foot-care-2-preview.jpg',
 	'date' : 20170828,
 	'title' : '<h1>UIHI Infographics</h1><h3>Foot Care Version Two</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is an alternate, pending icon for foot care and podiatry</p>'},
-	{'name' : 'design-uihi-infographic-glycemic-control-sugar-dark-outline',
-	'category' : '12 Logos, 48 Hours',
-	'source' : 'images/design-uihi-infographic-glycemic-control-sugar-dark-outline.png',
-	'sourceSmall' : 'images/design-uihi-infographic-glycemic-control-sugar-dark-outline-400.png',
-	'preview' : 'images/design-uihi-infographic-glycemic-control-sugar-dark-outline-preview.jpg',
-	'date' : 20170828,
-	'title' : '<h1>UIHI Infographics</h1><h3>Glycemic Control</h3><p>August 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for glycemic control/blood sugar regulation.</p>'},
 	{'name' : 'design-uihi-infographic-glycemic-control',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-glycemic-control.png',
 	'sourceSmall' : 'images/design-uihi-infographic-glycemic-control-400.png',
 	'preview' : 'images/design-uihi-infographic-glycemic-control-preview.jpg',
@@ -511,7 +472,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Glycemic Control Version Two</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is an alternate, pending icon for glycemic control/blood sugar regulation.</p>'},
 	{'name' : 'design-uihi-infographic-immunization',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-immunization.png',
 	'sourceSmall' : 'images/design-uihi-infographic-immunization-400.png',
 	'preview' : 'images/design-uihi-infographic-immunization-preview.jpg',
@@ -519,7 +480,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Immunization</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for immunization and preventative care.</p>'},
 	{'name' : 'design-uihi-infographic-blood-pressure',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-blood-pressure.png',
 	'sourceSmall' : 'images/design-uihi-infographic-blood-pressure-400.png',
 	'preview' : 'images/design-uihi-infographic-blood-pressure-preview.jpg',
@@ -527,7 +488,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Blood Pressure</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for blood pressure monitorization and control.</p>'},
 	{'name' : 'design-uihi-infographic-heart',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-heart.png',
 	'sourceSmall' : 'images/design-uihi-infographic-heart-400.png',
 	'preview' : 'images/design-uihi-infographic-heart-preview.jpg',
@@ -535,7 +496,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Heart Care</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used for cardiac contorl/heart care.</p>'},
 	{'name' : 'design-uihi-infographic-kidneys',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-kidneys.png',
 	'sourceSmall' : 'images/design-uihi-infographic-kidneys-400.png',
 	'preview' : 'images/design-uihi-infographic-kidneys-preview.jpg',
@@ -543,7 +504,7 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Kidney Care</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used kidney care/urinary monitorization.</p>'},
 	{'name' : 'design-uihi-infographic-TB-screening',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographic-TB-screening.png',
 	'sourceSmall' : 'images/design-uihi-infographic-TB-screening-400.png',
 	'preview' : 'images/design-uihi-infographic-TB-screening-preview.jpg',
@@ -551,20 +512,52 @@ var images = [
 	'title' : '<h1>UIHI Infographics</h1><h3>Tuberculosis Screening</h3><p>August 2017</p>',
 	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed 12 icons with a 4 color palette to be created in 48 hours. These icons are for their 2017 diabetes report (link to follow when published). This infographic is used Tuberculosis Screening.</p>'},
 	{'name' : 'design-uihi-infographics-human-comparison',
-	'category' : '12 Logos, 48 Hours',
+	'category' : '12 Icons, 48 Hours',
 	'source' : 'images/design-uihi-infographics-human-comparison.png',
 	'sourceSmall' : 'images/design-uihi-infographics-human-comparison-400.png',
 	'preview' : 'images/design-uihi-infographics-human-comparison-preview.jpg',
 	'date' : 20170824,
 	'title' : '<h1>UIHI Infographics</h1><h3>General Human</h3><p>August 2017</p>',
-	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'}
+	'description' : '<p><a href="http://www.uihi.org" target="_blank">The Urban Indian Health Institute</a> needed a general person design to be used for all comparative population data. This graph is not used in the diabetes report, rather it is an illustrative example of how this person icon can be used.</p>'},
+    {'name' : 'design-the-vulpe-venture-banner',
+	'category' : 'Design and Composition',
+	'source' : 'images/design-the-vulpe-venture-banner.jpg',
+	'sourceSmall' : 'images/design-the-vulpe-venture-banner-400.jpg',
+	'preview' : 'images/design-the-vulpe-venture-banner-preview.jpg',
+	'date' : 20171231,
+	'title' : '<h1>The Vulpe Venture</h1><h3>Banners</h3><p>December 2017</p>',
+	'description' : '<p><a href="http://www.thevulpeventure.com" target="_blank">The Vulpe Venture</a> banner, specifically used for Twitter, but there are formatted versions for each indidvidual social media banner&apos;s dimensions.</p>'},
+    {'name' : 'design-the-vulpe-venture-logo',
+	'category' : 'Web Logos',
+	'source' : 'images/design-the-vulpe-venture-logo.png',
+	'sourceSmall' : 'images/design-the-vulpe-venture-logo-400.png',
+	'preview' : 'images/design-the-vulpe-venture-logo-preview.png',
+	'date' : 20171231,
+	'title' : '<h1>The Vulpe Venture</h1><h3>Logo</h3><p>December 2017</p>',
+	'description' : '<p><a href="http://www.thevulpeventure.com" target="_blank">The Vulpe Venture</a> logo, this is used in all promotional material for the web and print.</p>'},
+    {'name' : 'design-poly-entertainment-logo',
+	'category' : 'Web Logos',
+	'source' : 'images/design-poly-entertainment-logo.png',
+	'sourceSmall' : 'images/design-poly-entertainment-logo-400.png',
+	'preview' : 'images/design-poly-entertainment-logo-preview.png',
+	'date' : 20171101,
+	'title' : '<h1>Poly entertainment</h1><h3>Logo</h3><p>November 2017</p>',
+	'description' : '<p><a href="http://www.polyentertainment.com" target="_blank">Poly entertainment</a> logo, this is used in all promotional material for the web and print.</p>'},
+    {'name' : 'design-personal-logo',
+	'category' : 'Web Logos',
+	'source' : 'images/design-personal-logo.png',
+	'sourceSmall' : 'images/design-personal-logo.png',
+	'preview' : 'images/design-personal-logo.png',
+	'date' : 20171001,
+	'title' : '<h1>Personal Website</h1><h3>Logo</h3><p>October 2017</p>',
+	'description' : '<p><a href="http://www.missellepope.com" target="_self">Miss Elle Pope&apos;s</a> logo, this is used only in promotional material for personal website and is not associated with any other projects.</p>'}
 ];
 
 //This array is for webLinks and previews, since function is much different than images
 
 var webLinks = [
 	{'name' : 'website-matt-rothaus',
-	 'category' : 'PHP and Wordpress',
+	 'category' : 'PHP and WordPress',
 	 'preview' : 'images/website-matt-rothaus.jpg',
 	 'date' : 20170927,
 	 'hyperlink' : 'http://www.mr-ecology.com',
@@ -617,36 +610,18 @@ var webLinks = [
 	'date' : 20170412,
 	'hyperlink' : 'https://misselle.github.io/calculator/',
 	'description' : '<h1>Stellar Calculator</h1><h3>Basic Calculations</h3><p>April 2017</p><p>Assignment for Certificate. Simple calculator that performs addition, mean, and count of all numbers. For an added challenge, generates a div that looks like a star bouncing around screen.'},
-	{'name' : 'website-winter-scarves',
-	'category' : 'Javascript and JQuery',
-	'preview' : 'images/website-winter-scarves.jpg',
-	'date' : 20170305,
-	'hyperlink' : 'https://misselle.github.io/html200-ecomm/',
-	'description' : '<h1>Winter Wear Warehouse</h1><h3>Mock Warehouse Website</h3><p>March 2017</p><p>Assignment for Certificate. Simple javascript implemented cart that will add or substract an item with the same button. Generates content based on javascript array.'},
 	{'name' : 'website-xylophone',
 	'category' : 'Javascript and JQuery',
 	'preview' : 'images/website-xylophone.jpg',
 	'date' : 20171026,
 	'hyperlink' : 'https://misselle.github.io/xylophone/',
 	'description' : '<h1>Xylophone</h1><h3>An extension of my class assignment, this is a test of playing audio and hover and click events using javascript.'},
-	{'name' : 'website-archery',
-	'category' : 'HTML5 and CSS3',
-	'preview' : 'images/website-archery.jpg',
-	'date' : 20161207,
-	'hyperlink' : 'https://misselle.github.io/Archery/',
-	'description' : '<h1>Archery Website</h1><h3>Mock Grid Layout</h3><p>December 2016</p><p>Assignment for Certificate. Web site is set up with responsive gridding. Tests basic transitions, google fonts, and stylings.'},
-	{'name' : 'website-rebecca_sugar',
-	'category' : 'HTML5 and CSS3',
-	'preview' : 'images/website-rebecca_sugar.jpg',
-	'date' : 20161012,
-	'hyperlink' : 'https://misselle.github.io/semantic_tags/Rebecca_Sugar.html',
-	'description' : '<h1>Fan Page</h1><h3>Simple and Semantic</h3><p>October 2016</p><p>Assignment for Certificate. First assignment where only HTML5 was permitted. All tags must be semantic. Added basic stylings to show ability to do a lot with a little.'},
-	{'name' : 'website-cat-rental',
-	'category' : 'HTML5 and CSS3',
-	'preview' : 'images/website-cat-rental.jpg',
-	'date' : 20161102,
-	'hyperlink' : 'https://misselle.github.io/cat-rental/',
-	'description' : '<h1>Cat Rental Website</h1><h3>Floats and More</h3><p>November 2016</p><p>Assignment for Certificate. HTML5 and CSS3 was now implemented. Exact replica of design from graphic designer (teacher) that utilized floats to arrange tags and images.'}
+    {'name' : 'website-the-vulpe-venture',
+	'category' : 'PHP and WordPress',
+	'preview' : 'images/website-the-vulpe-venture.jpg',
+	'date' : 20180101,
+	'hyperlink' : 'http://www.missellepope.com/temp.html',
+	'description' : '<h1>Victoria Vulpe</h1><h3>presents the Vulpe Venture</h3><p>January 2018</p><p>A website based in WordPress created for a health and wellness blog. This website features vegan recipes, travel, support, and products featuring the brand.</p>'}
 ];
 
 //Oject is for all images that do not have a matching name in the array
