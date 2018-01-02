@@ -65,7 +65,7 @@ body {
 
 #dark-box {
 	position: fixed;
-	top: -3em;
+	top: 0em;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
